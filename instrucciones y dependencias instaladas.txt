@@ -1,0 +1,16 @@
+Components
+
+AppContainer
+Header
+ - AppMenu
+ - AddMovie
+MovieList
+ActiveMovie 
+ - ActiveMovie.tsx   - ActiveMovie.scss
+
+carpeta helpers con el customhook para useFetch
+
+npx create-react-app liteflix-challenge --template typescript
+
+npm i sass
+npm i axios
