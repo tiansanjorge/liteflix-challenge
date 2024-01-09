@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+.movie-list {
+  width: 327px;
+  margin: 64px auto 0;
+  box-sizing: border-box;
+}
+.movie-list .popular-link {
+  font-family: "Bebas Neue";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 4px;
+  text-align: center;
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 32px;
+}
+.movie-list .dropdown-arrow {
+  margin: 3px 0 0 11px;
+  vertical-align: top;
+  width: 13px;
+  height: 8px;
+}
+.movie-list .movie-thumbnails {
+  display: flex;
+  flex-direction: column;
+}
+.movie-list .movie-thumbnail {
+  height: 146px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.movie-list .last-movie-thumbnail {
+  height: 146px;
+  margin: 0 auto 52px;
+  position: relative;
+}
+.movie-list .thumbnail-image {
+  width: 220px;
+  height: 146px;
+}
+.movie-list .thumbnail-overlay {
+  position: absolute;
+  width: 220px;
+  height: 146px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.movie-list .thumbnail-overlay .list-play-button {
+  width: 48px;
+  height: 48px;
+  margin: 49px auto 19px;
+  background-color: transparent;
+}
+.movie-list .thumbnail-overlay .movie-title {
+  font-family: "Bebas Neue";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 4px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 0 14px;
+}
+
+@media screen and (min-width: 480px) {
+  .movie-list {
+    position: absolute;
+    width: 220px;
+    top: 152px;
+    right: 104px;
+    margin: 0;
+  }
+  .movie-list .last-movie-thumbnail {
+    margin: 0 auto;
+  }
+  .movie-list .list-play-button {
+    width: 40px;
+    height: 40px;
+    margin: 53px auto 23px;
+  }
+}/*# sourceMappingURL=MovieList.css.map */

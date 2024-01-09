@@ -1,11 +1,36 @@
-import React from 'react';
-import useMainMovie from '../../helpers/useMainMovie';
-import './AppContainer.scss'; // Importa el archivo SCSS
-import Header from "../Header/Header";
-import ActiveMovie  from "../ActiveMovie/ActiveMovie";
+import { useState, useEffect } from 'react';
+import useActiveMovie from '../../helpers/useActiveMovie';
+import './AppContainer.scss';
+import Header from '../Header/Header';
+import ActiveMovie from '../ActiveMovie/ActiveMovie';
+import MovieList from '../MovieList/MovieList';
 
 const AppContainer: React.FC = () => {
-  const { movies, loading, error } = useMainMovie();
+  const { movies, loading, error } = useActiveMovie();
+  const [selectedImagePath, setSelectedImagePath] = useState<string>('');
+
+  useEffect(() => {
+    const handleResize = () => {
+      const selectedMovie = movies[14];
+
+      if (selectedMovie) {
+        const imageUrl =
+          window.innerWidth >= 480
+            ? `https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path}`
+            : `https://image.tmdb.org/t/p/original${selectedMovie.poster_path}`;
+
+        setSelectedImagePath(imageUrl);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [movies]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -15,16 +40,16 @@ const AppContainer: React.FC = () => {
     return <p>There was an error loading the movie or no movies available.</p>;
   }
 
-  const imageUrl = `https://image.tmdb.org/t/p/original${movies[15].backdrop_path}`;
-
   const appContainerStyle = {
-    backgroundImage: `url(${imageUrl})`,
+    backgroundImage: `url(${selectedImagePath})`,
   };
 
   return (
-    <div className='AppContainer' style={appContainerStyle}>
-      <Header/>
-      <ActiveMovie title={movies[15].title} />
+    <div className="AppContainer" style={appContainerStyle}>
+      <div className="gradient-overlay" />
+      <Header />
+      <ActiveMovie title={movies[14].title} />
+      <MovieList />
     </div>
   );
 };

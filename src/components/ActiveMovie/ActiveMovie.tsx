@@ -14,12 +14,12 @@ const ActiveMovie: React.FC<ActiveMovieProps> = ({ title }) => {
       <h1 className="movieTitle">{title}</h1>
 
       <div className="buttons">
-        <button className="play-button">
-          <img src="img/play.png" alt="play" className="play-icon" />
+        <button className="main-play-button">
+          <img src="img/play.png" alt="play" className="main-play-icon" />
           REPRODUCIR
         </button>
         <button className="add-to-list-button">
-          <img src="img/plus.png" alt="plus" className="plus-icon" />
+          <img src="img/plus.png" alt="plus" className="main-plus-icon" />
           MI LISTA
         </button>
       </div>

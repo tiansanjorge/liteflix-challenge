@@ -5,27 +5,36 @@ interface Movie {
   id: number;
   title: string;
   backdrop_path: string | null;
+  poster_path: string | null;
 }
 
-interface MainMovieHook {
+interface ActiveMovieHook {
   movies: Movie[];
   loading: boolean;
   error: any; 
 }
 
-const useMainMovie = (): MainMovieHook => {
+const useActiveMovie = (): ActiveMovieHook => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<any>(null);
 
   useEffect(() => {
-    const fetchMainMovie = async () => {
+    const fetchActiveMovie = async () => {
       try {
         const API_KEY = '6f26fd536dd6192ec8a57e94141f8b20';
         const response = await axios.get(
           `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`
         );
-        setMovies(response.data.results);
+
+        const moviesWithPosterPath = response.data.results.map((movie: any) => ({
+          id: movie.id,
+          title: movie.title,
+          backdrop_path: movie.backdrop_path,
+          poster_path: movie.poster_path,
+        }));
+
+        setMovies(moviesWithPosterPath);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -33,10 +42,11 @@ const useMainMovie = (): MainMovieHook => {
       }
     };
 
-    fetchMainMovie();
+    fetchActiveMovie();
   }, []);
 
   return { movies, loading, error };
 };
 
-export default useMainMovie;
+export default useActiveMovie;
+

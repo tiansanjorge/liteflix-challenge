@@ -1,32 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-
 .header {
-  padding-top: 32px;
+  padding-top: 16px;
   margin: 0 auto;
-  width: 1232px;
-  height: 40px;
+  width: 327px;
+  height: 36px;
   display:flex;
   flex-direction: row;
-  justify-content: space-between
+  justify-content: space-between;
+  align-items:center
 }
 
-.section{
-  display:flex;
-  flex-direction: row;
-  align-items: center;
+.menu-icon {
+  width: 27px;
+  height: 12px;
 }
 
 .logo {
-  width: 113px;
-  height: 34px;
-  margin-right: 64px;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 700;
-  line-height: 34px;
+  line-height: 28px;
   letter-spacing: 4px;
-  text-align: left;
+  text-align: center;
   color: #64EEBC;
 }
 
@@ -34,38 +30,67 @@
   font-weight: 400;
 }
 
-.plus-icon {
-  width: 14px;
-  height: 14px;
-  margin-right: 12px;
-}
-
-.add-movie {
-  width: fit-content;
-  height: 18px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 4px;
-  text-align: left;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.menu-icon {
-  margin-right: 40px;
-  width: 27px;
-  height: 12px;
-}
-
-.notification-icon {
-  margin-right: 40px;
-  width: 26px;
-  height: 26px;
-}
-
 .profile-icon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
+}
+
+@media screen and (min-width: 480px) {
+
+  .header {
+    padding-top: 32px;
+    width: 1232px;
+    height: 40px;
+  }
+  
+  .section{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .logo {
+    margin-right: 64px;
+    font-size: 34px;
+    line-height: 34px;
+    text-align: left;
+  }
+  
+  .logo2{
+    font-weight: 400;
+  }
+  
+  .header-plus-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 12px;
+  }
+  
+  .add-movie {
+    width: fit-content;
+    height: 18px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 4px;
+    text-align: left;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .menu-icon {
+    margin-right: 40px;
+  }
+  
+  .notification-icon {
+    margin-right: 40px;
+    width: 26px;
+    height: 26px;
+  }
+  
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+  }
 }

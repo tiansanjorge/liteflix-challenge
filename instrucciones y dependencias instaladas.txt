@@ -14,3 +14,4 @@ npx create-react-app liteflix-challenge --template typescript
 
 npm i sass
 npm i axios
+npm i bootstrap@5.3.2
