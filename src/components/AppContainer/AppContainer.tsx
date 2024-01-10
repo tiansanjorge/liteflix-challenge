@@ -11,7 +11,7 @@ const AppContainer: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const selectedMovie = movies[14];
+      const selectedMovie = movies[13];
 
       if (selectedMovie) {
         const imageUrl =
@@ -46,9 +46,9 @@ const AppContainer: React.FC = () => {
 
   return (
     <div className="AppContainer" style={appContainerStyle}>
-      <div className="gradient-overlay" />
+      {/* <div className="gradient-overlay" /> */}
       <Header />
-      <ActiveMovie title={movies[14].title} />
+      <ActiveMovie title={movies[13].title} />
       <MovieList />
     </div>
   );
