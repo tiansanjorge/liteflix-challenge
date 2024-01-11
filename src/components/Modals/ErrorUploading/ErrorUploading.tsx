@@ -16,19 +16,35 @@ const ErrorUploading: React.FC<ErrorUploadingProps> = ({
 }) => {
   return movieData ? (
     <Modal show={fileUploaded} onHide={onReset} centered>
-      <Modal.Header closeButton>
-        <Modal.Title>AGREGAR PELICULA</Modal.Title>
-      </Modal.Header>
+      <div className="modal-header">
+        <img
+          className="close-button"
+          onClick={onReset}
+          src="img/close.png"
+          alt="close-button"
+        />
+        <Modal.Title className="modal-title">AGREGAR PELÍCULA</Modal.Title>
+      </div>
       <Modal.Body>
-        <label>¡ERROR! NO SE PUDO CARGAR LA PELICULA</label>
-        <progress id="file" max="100" value="100">
-          70%
-        </progress>
-        <div className="divider">{movieData.name}</div>
+        <div className="loading-container">
+          <p>
+            <b>¡ERROR!</b> NO SE HA PODIDO CARGAR LA PELÍCULA
+          </p>
+          <progress className="progress-error" id="file" max="100" value="100">
+            40%
+          </progress>
+          <p className="cancel" onClick={onRetry}>
+            REINTENTAR
+          </p>
+        </div>
+        <div className="uploading-divider">
+          <p>{movieData.name}</p>
+        </div>
       </Modal.Body>
       <Modal.Footer>
-        <button onClick={onRetry}>Reintentar</button>
-        <button disabled>Subir Película</button>
+        <button disabled className="upload-button">
+          Subir Película
+        </button>
       </Modal.Footer>
     </Modal>
   ) : null;

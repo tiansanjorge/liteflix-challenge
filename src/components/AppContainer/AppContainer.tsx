@@ -11,7 +11,7 @@ const AppContainer: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const selectedMovie = movies[13];
+      const selectedMovie = movies[15];
 
       if (selectedMovie) {
         const imageUrl =
@@ -40,17 +40,22 @@ const AppContainer: React.FC = () => {
     return <p>There was an error loading the movie or no movies available.</p>;
   }
 
-  const appContainerStyle = {
+  const movieBackground = {
     backgroundImage: `url(${selectedImagePath})`,
   };
 
   return (
-    <div className="AppContainer" style={appContainerStyle}>
-      {/* <div className="gradient-overlay" /> */}
-      <Header />
-      <ActiveMovie title={movies[13].title} />
-      <MovieList />
+    <div className="app-container">
+      <div className="content-container">
+        <Header />
+        <ActiveMovie title={movies[15].title} />
+        <MovieList />
+      </div>
+      <div className="background-image" style={{ backgroundImage: `url(${selectedImagePath})` }}>
+      <div className="gradient-overlay" />
+      </div>
     </div>
+    
   );
 };
 

@@ -1,37 +1,47 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 
-interface ErrorUploadingProps {
+interface SuccessModalProps {
   fileUploaded: boolean;
   movieData: { name: string; image: string } | null;
   onReset: () => void;
-  onRetry: () => void;
+  onGoToHome: () => void;
 }
 
-const ErrorUploading: React.FC<ErrorUploadingProps> = ({
+const SuccessModal: React.FC<SuccessModalProps> = ({
   fileUploaded,
   movieData,
   onReset,
-  onRetry,
+  onGoToHome,
 }) => {
+
+  
+
+
   return movieData ? (
-    <Modal show={fileUploaded} onHide={onReset} centered>
-      <Modal.Header closeButton>
-        <Modal.Title>AGREGAR PELICULA</Modal.Title>
-      </Modal.Header>
+    <Modal show={fileUploaded} onHide={onReset} centered className="overflow-hidden">
+      <div className="modal-header">
+        <img
+          className="close-button"
+          onClick={onReset}
+          src="img/close.png"
+          alt="close-button"
+        />
+        <Modal.Title id="success-title">LITEFLIX</Modal.Title>
+      </div>
       <Modal.Body>
-        <label>EXITO!</label>
-        <progress id="file" max="100" value="100">
-          70%
-        </progress>
-        <div className="divider">{movieData.name}</div>
+        <div>
+        <p className="congratulations">¡FELICITACIONES!</p>
+        <p className="success-message">{movieData.name} FUE CORRECTAMENTE SUBIDA.</p>
+        </div>
       </Modal.Body>
       <Modal.Footer>
-        <button onClick={onRetry}>Reintentar</button>
-        <button disabled>Subir Película</button>
+        <button id="home-button" onClick={onGoToHome}>
+          IR A HOME
+        </button>
       </Modal.Footer>
     </Modal>
   ) : null;
 };
 
-export default ErrorUploading;
+export default SuccessModal;

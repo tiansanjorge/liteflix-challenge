@@ -6,6 +6,7 @@ interface ErrorUploadingProps {
   movieData: { name: string; image: string } | null;
   onReset: () => void;
   onRetry: () => void;
+  onUpload: () => void
 }
 
 const ErrorUploading: React.FC<ErrorUploadingProps> = ({
@@ -13,22 +14,39 @@ const ErrorUploading: React.FC<ErrorUploadingProps> = ({
   movieData,
   onReset,
   onRetry,
+  onUpload
 }) => {
   return movieData ? (
     <Modal show={fileUploaded} onHide={onReset} centered>
-      <Modal.Header closeButton>
-        <Modal.Title>AGREGAR PELICULA</Modal.Title>
-      </Modal.Header>
+      <div className="modal-header">
+        <img
+          className="close-button"
+          onClick={onReset}
+          src="img/close.png"
+          alt="close-button"
+        />
+        <Modal.Title className="modal-title">AGREGAR PELÍCULA</Modal.Title>
+      </div>
       <Modal.Body>
-        <label>EXITO!</label>
-        <progress id="file" max="100" value="100">
-          70%
-        </progress>
-        <div className="divider">{movieData.name}</div>
+        <div className="loading-container">
+          <p>
+            CARGANDO <b>100%</b>
+          </p>
+          <progress className="progress-uploading" id="file" max="100" value="100">
+            100%
+          </progress>
+          <p className="upload-finished-message">
+            !LISTO!
+          </p>
+        </div>
+        <div className="uploading-divider">
+          <p>{movieData.name}</p>
+        </div>
       </Modal.Body>
       <Modal.Footer>
-        <button onClick={onRetry}>Reintentar</button>
-        <button disabled>Subir Película</button>
+        <button onClick={onUpload} className="upload-button">
+          Subir Película
+        </button>
       </Modal.Footer>
     </Modal>
   ) : null;

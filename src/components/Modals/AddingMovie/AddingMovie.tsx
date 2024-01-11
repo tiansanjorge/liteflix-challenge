@@ -1,10 +1,11 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 
+import "./AddingMovie.scss";
+
 interface AddingMovieProps {
   show: boolean;
-  onClose: () => void;
-  onFileUpload: () => void;
+  onReset: () => void;
   onDrop: (event: React.DragEvent<HTMLDivElement>) => void;
   onDragOver: (event: React.DragEvent<HTMLDivElement>) => void;
   handleFileChange: (file: File | undefined) => void;
@@ -12,18 +13,17 @@ interface AddingMovieProps {
 
 const AddingMovie: React.FC<AddingMovieProps> = ({
   show,
-  onClose,
-  onFileUpload,
+  onReset,
   onDrop,
   onDragOver,
   handleFileChange,
 }) => {
   return (
-    <Modal show={show} onHide={onClose} centered className="overflow-hidden">
+    <Modal show={show} onHide={onReset} centered className="overflow-hidden">
       <div className="modal-header">
         <img
           className="close-button"
-          onClick={onClose}
+          onClick={onReset}
           src="img/close.png"
           alt="close-button"
         />
@@ -53,7 +53,7 @@ const AddingMovie: React.FC<AddingMovieProps> = ({
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <button className="upload-button" onClick={onFileUpload}>
+        <button className="upload-button" disabled>
           SUBIR PELÍCULA
         </button>
       </Modal.Footer>

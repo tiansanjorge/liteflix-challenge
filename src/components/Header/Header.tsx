@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import AddMovie from "../AddMovie/AddMovie";
+import Menu from "../Menu/Menu";
 
 const Header: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showModal, setShowModal] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,6 +20,10 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  const handleMenuIconClick = () => {
+    setShowMenu(!showMenu);
+  };
+
   const handleAddMovieClick = () => {
     setShowModal(true);
   };
@@ -30,7 +36,12 @@ const Header: React.FC = () => {
     <>
       {windowWidth < 480 ? (
         <div className="header">
-          <img src="img/menu-mobile.png" alt="menu" className="menu-icon" />
+          <img
+            src="img/menu-mobile.png"
+            alt="menu"
+            className="menu-icon cursor-pointer"
+            onClick={handleMenuIconClick}
+          />
           <div className="logo">
             LITE<span className="logo2">FLIX</span>
           </div>
@@ -43,14 +54,14 @@ const Header: React.FC = () => {
               LITE<span className="logo2">FLIX</span>
             </div>
 
-            <a href="#" className="add-movie" onClick={handleAddMovieClick}>
+            <button  className="add-movie" onClick={handleAddMovieClick}>
               <img src="img/plus.png" alt="plus" className="header-plus-icon" />
               Agregar película
-            </a>
+            </button>
           </div>
-
+          <AddMovie show={showModal} onClose={handleCloseModal} />
           <div className="section">
-            <img src="img/menu.png" alt="menu" className="menu-icon" />
+            <img src="img/menu.png" alt="menu" className="menu-icon" onClick={handleMenuIconClick}/>
             <img
               src="img/notificacion.png"
               alt="notificacion"
@@ -59,9 +70,10 @@ const Header: React.FC = () => {
             <img src="img/perfil.png" alt="perfil" className="profile-icon" />
           </div>
 
-          <AddMovie show={showModal} onClose={handleCloseModal} />
+          
         </div>
       )}
+      {showMenu && <Menu onClose={() => setShowMenu(false)} />}
     </>
   );
 };

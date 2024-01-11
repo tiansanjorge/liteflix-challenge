@@ -14,19 +14,35 @@ const UploadingMovie: React.FC<UploadingMovieProps> = ({
 }) => {
   return movieData ? (
     <Modal show={fileUploaded} onHide={onReset} centered>
-      <Modal.Header closeButton>
-        <Modal.Title>AGREGAR PELICULA</Modal.Title>
-      </Modal.Header>
+      <div className="modal-header">
+        <img
+          className="close-button"
+          onClick={onReset}
+          src="img/close.png"
+          alt="close-button"
+        />
+        <Modal.Title className="modal-title">AGREGAR PELÍCULA</Modal.Title>
+      </div>
       <Modal.Body>
-        <label>CARGANDO 70%</label>
-        <progress id="file" max="100" value="70">
-          70%
-        </progress>
-        <div className="divider">{movieData.name}</div>
+        <div className="loading-container">
+          <p>
+            CARGANDO <b>40%</b>
+          </p>
+          <progress className="progress-uploading" id="file" max="100" value="40">
+            40%
+          </progress>
+          <p className="cancel" onClick={onReset}>
+            CANCELAR
+          </p>
+        </div>
+        <div className="uploading-divider">
+          <p>{movieData.name}</p>
+        </div>
       </Modal.Body>
       <Modal.Footer>
-        <button onClick={onReset}>Cancelar</button>
-        <button disabled>Subir Película</button>
+        <button disabled className="upload-button">
+          Subir Película
+        </button>
       </Modal.Footer>
     </Modal>
   ) : null;

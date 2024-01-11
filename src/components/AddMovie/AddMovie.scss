@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-div.modal-dialog {
+.modal-dialog {
   max-width: 730px;
 }
 
-div.modal-content {
+.modal-content {
   width: 730px;
   background: #242424;
   color: #ffffff;
-  border:none;
+  border: none;
   border-radius: 0;
   padding: 24px;
   box-sizing: border-box;
@@ -23,7 +23,7 @@ div.modal-content {
     padding: 0;
   }
 
-  div.modal-title {
+  .modal-title {
     font-family: "Bebas Neue", sans-serif;
     font-size: 20px;
     font-weight: 400;
@@ -34,11 +34,13 @@ div.modal-content {
   }
 
   .close-button {
+    width: 15px;
+    height: 15px;
     cursor: pointer;
     align-self: flex-end;
   }
 
-  div.modal-body {
+  .modal-body {
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -46,7 +48,7 @@ div.modal-content {
     align-items: center;
   }
 
-  div.container {
+  .container {
     margin-top: 48px;
     width: 602px;
     height: 100px;
@@ -54,7 +56,7 @@ div.modal-content {
     padding: 0;
     box-sizing: border-box;
 
-    .add-label{
+    .add-label {
       display: flex;
       flex-direction: center;
       cursor: pointer;
@@ -75,7 +77,7 @@ div.modal-content {
     }
   }
 
-  div.divider {
+  .divider {
     width: 248px;
     height: 24px;
     margin-top: 48px;
@@ -93,7 +95,7 @@ div.modal-content {
     }
   }
 
-  div.modal-footer {
+  .modal-footer {
     border: none;
     display: flex;
     justify-content: center;
@@ -103,7 +105,7 @@ div.modal-content {
     width: 248px;
     height: 56px;
     padding: 0;
-    border:0;
+    border: 0;
     border-radius: none;
     font-family: "Bebas Neue", sans-serif;
     font-size: 18px;
@@ -111,5 +113,136 @@ div.modal-content {
     line-height: 22px;
     letter-spacing: 4px;
     margin: 48px 0 24px;
+    color: #242424
   }
+}
+
+// UploadingMovie
+
+.loading-container {
+  width: 602px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 4px;
+  margin-top: 60px;
+}
+
+.progress-uploading {
+  width: 100%;
+  border: none;
+  height: 10px;
+  background-color: #ffffff80;
+
+  &::-webkit-progress-value {
+    background-color: #64eebc;
+  }
+
+  &::-moz-progress-bar {
+    background-color: #64eebc;
+  }
+}
+
+.cancel {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 4px;
+  text-align: end;
+  margin: 20px 0 59px;
+  cursor: pointer;
+}
+
+.uploading-divider {
+  width: 248px;
+  height: 24px;
+  border-bottom: 1px solid #ffffff;
+  box-sizing: border-box;
+
+  p {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+}
+
+// ErrorUploading
+
+.progress-error {
+  border: none;
+  height: 10px;
+  background-color: #ffffff80;
+
+  &::-webkit-progress-value {
+    background-color: #ff0000;
+  }
+
+  &::-moz-progress-bar {
+    background-color: #ff0000;
+  }
+}
+
+// UploadFinished
+
+.upload-finished-message {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 4px;
+  text-align: end;
+  margin: 20px 0 59px;
+  color: #64eebc;
+}
+
+// SuccesModal
+
+.congratulations {
+  font-family: Bebas Neue;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 4px;
+  text-align: center;
+  margin: 72px 0 24px;
+}
+
+.success-message {
+  font-family: Bebas Neue;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+#success-title {
+  margin-top: 25px;
+  font-family: Bebas Neue;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 4px;
+}
+
+#home-button {
+  width: 248px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 4px;
+  margin: 92px 0 24px;
 }

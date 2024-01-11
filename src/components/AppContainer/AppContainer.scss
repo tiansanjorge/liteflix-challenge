@@ -1,10 +1,20 @@
-.AppContainer {
+.app-container {
+  position: relative;
+  background: #242424;
+}
+
+.content-container {
+  position: relative;
+  z-index: 1;
+}
+
+.background-image {
   width: 100%;
   height: 561px;
   background-size: cover;
-  background-position: bottom;
-  position: relative;
-  // z-index: -2;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .gradient-overlay {
@@ -14,13 +24,15 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  // z-index: -1;
 }
 
 @media screen and (min-width: 480px) {
   .AppContainer {
     min-height: 100vh;
-    background-position: center;
+  }
+
+  .background-image {
+    height: 100vh;
   }
 
   .gradient-overlay {

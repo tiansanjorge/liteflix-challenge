@@ -11,12 +11,12 @@
     font-weight: 400;
     line-height: 18px;
     letter-spacing: 4px;
-    text-align: center;
-
     display: block;
     color: #ffffff;
-    text-decoration: none;
-    margin-bottom: 32px;
+    background: transparent;
+    border:none;
+    margin: 0 auto 0;
+    padding: 0;
   }
 
   .dropdown-arrow {
@@ -26,9 +26,56 @@
     height: 8px;
   }
 
+  .dropdown-options{
+    width:241px;
+    height: 102px;
+    background: url('../../../public/img/dropdown.png');
+    background-size: cover;
+    position:absolute;
+    right:0;
+    z-index:1;
+    margin-top:8px;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .dropdown-option{
+    position:relative;
+    font-family: "Bebas Neue";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 4px;
+    color:#ffffff;
+    z-index:1;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .option-popular-movies{
+    margin:30px 0 16px;
+  }
+
+  .vector{
+    width: 12px;
+    height: 8px;
+  }
+
+  .option-my-movies{
+    margin-bottom:24px;
+  }
+
   .movie-thumbnails {
     display: flex;
     flex-direction: column;
+  }
+
+  .first-movie-thumbnail {
+    height: 146px;
+    margin: 32px auto 20px;
+    position: relative;
   }
 
   .movie-thumbnail {
@@ -77,6 +124,8 @@
       margin: 0 0 14px;
     }
   }
+
+  
 }
 
 
