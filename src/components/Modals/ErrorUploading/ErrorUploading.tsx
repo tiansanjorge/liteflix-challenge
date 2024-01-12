@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Modal } from "react-bootstrap";
+import MobileModalHeader from "../MobileModalHeader/MobileModalHeader";
 
 interface ErrorUploadingProps {
   fileUploaded: boolean;
@@ -14,37 +15,54 @@ const ErrorUploading: React.FC<ErrorUploadingProps> = ({
   onReset,
   onRetry,
 }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return movieData ? (
     <Modal show={fileUploaded} onHide={onReset} centered>
+      {windowWidth < 480 && <MobileModalHeader onReset={onReset} />}
       <div className="modal-header">
-        <img
-          className="close-button"
-          onClick={onReset}
-          src="img/close.png"
-          alt="close-button"
-        />
+      {windowWidth > 480 && <img
+            className="close-button"
+            onClick={onReset}
+            src="img/close.png"
+            alt="close-button"
+          />}
         <Modal.Title className="modal-title">AGREGAR PELÍCULA</Modal.Title>
       </div>
-      <Modal.Body>
+      <div className="body-modal">
         <div className="loading-container">
-          <p>
-            <b>¡ERROR!</b> NO SE HA PODIDO CARGAR LA PELÍCULA
+          <p><b>¡ERROR! </b> 
+          {windowWidth < 480 ? "NO SE PUDO CARGAR LA PELÍCULA"  : "NO SE HA PODIDO CARGAR LA PELÍCULA"}
           </p>
           <progress className="progress-error" id="file" max="100" value="100">
-            40%
+            100%
           </progress>
           <p className="cancel" onClick={onRetry}>
             REINTENTAR
           </p>
         </div>
         <div className="uploading-divider">
-          <p>{movieData.name}</p>
+          <p>{movieData.name.slice(0,-4)}</p>
         </div>
-      </Modal.Body>
+      </div>
       <Modal.Footer>
         <button disabled className="upload-button">
           Subir Película
         </button>
+        {windowWidth < 480 && <button className="exit-button" onClick={onReset}>
+            SALIR
+          </button>}
       </Modal.Footer>
     </Modal>
   ) : null;

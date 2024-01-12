@@ -11,7 +11,7 @@ const AppContainer: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const selectedMovie = movies[15];
+      const selectedMovie = movies[18];
 
       if (selectedMovie) {
         const imageUrl =
@@ -48,7 +48,7 @@ const AppContainer: React.FC = () => {
     <div className="app-container">
       <div className="content-container">
         <Header />
-        <ActiveMovie title={movies[15].title} />
+        <ActiveMovie title={movies[18].title} />
         <MovieList />
       </div>
       <div className="background-image" style={{ backgroundImage: `url(${selectedImagePath})` }}>

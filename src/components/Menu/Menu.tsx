@@ -32,6 +32,9 @@ const Menu: React.FC<MenuProps> = ({ onClose }) => {
             src="img/close.png"
             alt="close-button"
           />
+          <div className="menu-logo">
+            LITE<span className="menu-logo2">FLIX</span>
+          </div>
           <div className="section">
             <img
               src="img/notificacion.png"

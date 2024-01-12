@@ -1,67 +1,81 @@
-.background{
-  width: 100%;
+.background {
+  width: 100vw;
   height: 100vh;
   background: #00000068;
   position: fixed;
   top: 0;
   left: 0;
-  z-index:2
+  z-index: 2;
 }
 
 .menu-dropdown {
-  width: 761px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  right: 0;
+  width: 100vw;
+  min-height: 100vh;
   background-color: #242424;
-  // z-index:5
+  padding: 2vh 6.4vw 0;
 }
 
 .menu-header {
-  width: 569px;
-  margin:32px 104px 85px 88px ;
-  height: 40px;
+  width: 100%;
   display: flex;
-
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 7.7vh;
 }
 
 .close-button {
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
+  margin-right: 12px;
   cursor: pointer;
 }
 
-.content{
-  margin-left:80px;
+.menu-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 4px;
+  text-align: center;
+  color: #64EEBC;
+}
+
+.menu-logo2{
+  font-weight: 400;
+}
+
+.notification-icon{
+  display: none;
+}
+
+.content {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 22px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 16px;
   letter-spacing: 4px;
-  color: #ffffff
+  color: #ffffff;
 }
 
-.options p{
-  margin: 0 0 40px 0;
+.options p {
+  margin: 0 0 4.9vh 0;
 }
 
-.menu-add-movie{
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 22px;
+.menu-add-movie {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 22px;
+  line-height: 16px;
   letter-spacing: 4px;
   color: #ffffff;
   background: transparent;
-  border:none;
+  border: none;
   display: flex;
-  margin: 32px 0 72px;
+  margin: 2.9vh 0 7.7vh;
   padding: 0;
 }
 
@@ -69,4 +83,61 @@
   width: 14px;
   height: 14px;
   margin: 3px 12px 0 0px;
+}
+
+@media screen and (min-width: 480px) {
+
+  .menu-dropdown {
+    width: 53vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 3.4vh 7.2vw 3.4vh 6.1vw;
+    background-color: #242424;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-header {
+    width: 100%;
+  }
+
+  .close-button {
+    width: 18px;
+    height: 18px;
+  }
+
+  .menu-logo{
+    display: none;
+  }
+
+  .notification-icon{
+    display: block;
+  }
+
+  .content {
+    font-size: 22px;
+    line-height: 22px;
+  }
+
+  .options p {
+    margin: 0 0 4.3vh 0;
+  }
+
+  .menu-add-movie {
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: 4px;
+    color: #ffffff;
+    margin: 3.4vh 0 7.7vh;
+    padding: 0;
+  }
+
+  .menu-plus-icon {
+    width: 14px;
+    height: 14px;
+    margin: 3px 12px 0 0px;
+  }
 }

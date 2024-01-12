@@ -103,7 +103,11 @@ const MovieList: React.FC = () => {
                     ? `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`
                     : movie.image
                 }
-                alt={movie.title}
+                alt={
+                  showPopularMovies
+                    ? movie.title
+                    : movie.name?.slice(0,-4)
+                }
                 className="thumbnail-image"
               />
               <div className="thumbnail-overlay">
@@ -113,7 +117,7 @@ const MovieList: React.FC = () => {
                   className="list-play-button"
                 />
                 <p className="movie-title">
-                  {showPopularMovies ? movie.title : movie.name}
+                  {showPopularMovies ? movie.title : movie.name?.slice(0, -4)}
                 </p>
               </div>
             </div>

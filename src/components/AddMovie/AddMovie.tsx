@@ -2,7 +2,7 @@ import React, { useCallback, useState, useEffect } from "react";
 import AddingMovie from "../Modals/AddingMovie/AddingMovie";
 import UploadingMovie from "../Modals/UploadingMovie/UploadingMovie";
 import ErrorUploading from "../Modals/ErrorUploading/ErrorUploading";
-import UploadEnd from "../Modals/UploadEnd/UploadEnd";
+import UploadFinished from "../Modals/UploadFinished/UploadFinished";
 import SuccessModal from "../Modals/SuccessModal/SuccessModal";
 
 import "./AddMovie.scss";
@@ -22,7 +22,7 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
     | "AddingMovie"
     | "UploadingMovie"
     | "ErrorUploading"
-    | "UploadEnd"
+    | "UploadFinished"
     | "SuccessModal"
     | null
   >(null);
@@ -80,7 +80,7 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
   };
 
   const handleRetryUpload = () => {
-    setCurrentModal("UploadEnd");
+    setCurrentModal("UploadFinished");
   };
 
   const handleUploadToMyMovies = () => {
@@ -99,6 +99,7 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
   return (
     <>
       {currentModal === "AddingMovie" && (
+        <>  
         <AddingMovie
           show={show}
           onReset={handleReset}
@@ -106,6 +107,7 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
           onDragOver={handleDragOver}
           handleFileChange={handleFileChange}
         />
+        </>
       )}
       {currentModal === "UploadingMovie" && (
         <UploadingMovie
@@ -122,8 +124,8 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
           onRetry={handleRetryUpload}
         />
       )}
-      {currentModal === "UploadEnd" && (
-        <UploadEnd
+      {currentModal === "UploadFinished" && (
+        <UploadFinished
           fileUploaded={fileUploaded}
           movieData={movieData}
           onReset={handleReset}
