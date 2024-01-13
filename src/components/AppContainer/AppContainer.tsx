@@ -7,30 +7,6 @@ import MovieList from "../MovieList/MovieList";
 
 const AppContainer: React.FC = () => {
   const { movies, loading, error } = useActiveMovie();
-  const [selectedImagePath, setSelectedImagePath] = useState<string>("");
-
-  useEffect(() => {
-    const handleResize = () => {
-      const selectedMovie = movies[18];
-
-      if (selectedMovie) {
-        const imageUrl =
-          window.innerWidth >= 900
-            ? `https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path}`
-            : `https://image.tmdb.org/t/p/original${selectedMovie.poster_path}`;
-
-        setSelectedImagePath(imageUrl);
-      }
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [movies]);
 
   if (loading) {
     return (
@@ -49,7 +25,7 @@ const AppContainer: React.FC = () => {
   }
 
   const movieBackground = {
-    backgroundImage: `url(${selectedImagePath})`,
+    backgroundImage: `url(https://image.tmdb.org/t/p/original${movies[0].backdrop_path})`,
   };
 
   return (
@@ -57,7 +33,7 @@ const AppContainer: React.FC = () => {
       <div className="content-container">
         <Header />
         <div className="body">
-          <ActiveMovie title={movies[18].title} />
+          <ActiveMovie title={movies[0].title} />
           <MovieList />
         </div>
       </div>

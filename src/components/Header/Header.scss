@@ -42,9 +42,7 @@
   }
   
   .section-logo{
-    width: 44%;
     display:flex;
-    justify-content: space-between;
     align-items: center;
   }
   
@@ -52,6 +50,7 @@
     font-size: 34px;
     line-height: 34px;
     text-align: left;
+    margin-right: 64px;
   }
   
   .header-plus-icon {
@@ -94,29 +93,5 @@
   .profile-icon {
     width: 40px;
     height: 40px;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .section-logo{
-    width: 41%;
-  }
-}
-
-@media screen and (min-width: 1150px) {
-  .section-logo{
-    width: 36%;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .section-logo{
-    width: 29.77%;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .section-logo{
-    width: 27%;
   }
 }

@@ -1,5 +1,5 @@
 .movie-list {
-  width: 87.2vw;
+  width: fit-content;
   margin: 7.9vh auto 0;
   box-sizing: border-box;
 
@@ -28,6 +28,7 @@
     width: 100vw;
     height: 112px;
     position: fixed;
+    bottom:0;
     z-index: 2;
     padding: 32px 24px;
     box-sizing: border-box;
@@ -64,7 +65,6 @@
   .movie-thumbnails {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
   }
 
   .first-movie-thumbnail {
@@ -137,29 +137,46 @@
   }
 }
 
-@media screen and (max-width: 479px) {
-  .dropdown-options {
-    left: 0;
-    bottom: 0;
-  }
-}
-
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 480px) {
   .movie-list {
-    width: 220px;
-    height: 746.8px;
-    margin: 8.6vh 7.2vw 0;
-
     .dropdown-options {
-      width: 241px;
+      width: 300px;
       height: 102px;
-      background: url("../../../public/img/dropdown.png");
-      background-size: cover;
       position: absolute;
-      right: 7.2vw;
+      left: 50%;
+      bottom:initial;
       margin-top: 8px;
       padding: 30px 24px 24px;
       box-sizing: border-box;
+      transform: translate(-50%)
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .movie-list {
+    width: 87.2vw;
+
+    .movie-thumbnails {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      overflow: hidden;
+      flex-wrap: wrap;
+      padding-bottom:7.9vh;
+    }
+
+  
+    .first-movie-thumbnail {
+      margin: 28px 20px 0 0;
+    }
+  
+    .movie-thumbnail {
+      margin: 28px 20px 0 0;
+    }
+
+    .last-movie-thumbnail {
+      margin: 28px 20px 0 0;
     }
 
     .thumbnail-image {
@@ -187,8 +204,51 @@
       }
     }
   }
+}
 
-  .movie-list::-webkit-scrollbar {
-    width: 0;
+@media screen and (min-width: 1078px) {
+  .movie-list{
+    .last-movie-thumbnail {
+      margin: 28px 0 0 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .movie-list {
+    width: 220px;
+    height: 746.8px;
+    margin: 80px 7.2vw 0;
+
+    .movie-thumbnails {
+      flex-direction: column;
+      padding-bottom:0;
+    }
+
+    .dropdown-options {
+      width: 241px;
+      height: 102px;
+      background: url("../../../public/img/dropdown.png");
+      background-size: cover;
+      position: absolute;
+      left:initial;
+      right: 7.2vw;
+      transform: initial;
+      margin-top: 8px;
+      padding: 30px 24px 24px;
+      box-sizing: border-box;
+    }
+
+    .first-movie-thumbnail {
+      margin: 32px auto 20px;
+    }
+  
+    .movie-thumbnail {
+      margin: 0 auto 20px;
+    }
+  
+    .last-movie-thumbnail {
+      margin: 0 auto 52px;
+    }
   }
 }

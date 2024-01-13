@@ -5,7 +5,6 @@ interface Movie {
   id: number;
   title: string;
   backdrop_path: string | null;
-  poster_path: string | null;
 }
 
 interface ActiveMovieHook {
@@ -27,14 +26,13 @@ const useActiveMovie = (): ActiveMovieHook => {
           `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`
         );
 
-        const moviesWithPosterPath = response.data.results.map((movie: any) => ({
+        const moviesData = response.data.results.map((movie: any) => ({
           id: movie.id,
           title: movie.title,
           backdrop_path: movie.backdrop_path,
-          poster_path: movie.poster_path,
         }));
 
-        setMovies(moviesWithPosterPath);
+        setMovies(moviesData);
         setLoading(false);
       } catch (error) {
         setError(error);

@@ -56,16 +56,23 @@
 }
 
 @media screen and (min-width: 900px) {
-  .body{
-    display: flex;
-    justify-content: space-between;
-  }
 
   .background-image {
     height: 100%;
     background-position: center;
   }
 
+  .gradient-overlay {
+    height: 60vh;
+  }
+
+}
+
+@media screen and (min-width: 1366px) {
+  .body{
+    display: flex;
+    justify-content: space-between;
+  }
   .gradient-overlay {
     display: none;
   }
