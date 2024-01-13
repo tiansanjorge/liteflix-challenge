@@ -1,87 +1,167 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .movie-list {
-  width: 327px;
-  margin: 64px auto 0;
+  width: 87.2vw;
+  margin: 7.9vh auto 0;
   box-sizing: border-box;
 }
 .movie-list .popular-link {
-  font-family: "Bebas Neue";
+  font-family: "bebas-neue-by-fontfabric";
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 18px;
   letter-spacing: 4px;
-  text-align: center;
   display: block;
   color: #ffffff;
-  text-decoration: none;
-  margin-bottom: 32px;
+  background: transparent;
+  border: none;
+  margin: 0 auto 0;
+  padding: 0;
 }
 .movie-list .dropdown-arrow {
-  margin: 3px 0 0 11px;
+  margin: 4px 0 0 11px;
   vertical-align: top;
   width: 13px;
+  height: 8px;
+}
+.movie-list .dropdown-options {
+  width: 100vw;
+  height: 112px;
+  position: fixed;
+  z-index: 2;
+  padding: 32px 24px;
+  box-sizing: border-box;
+  background: #242424;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.movie-list .dropdown-options .dropdown-option-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.movie-list .dropdown-options .dropdown-option {
+  position: relative;
+  font-family: "bebas-neue-by-fontfabric";
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 16px;
+  letter-spacing: 4px;
+  color: #ffffff;
+  z-index: 1;
+  cursor: pointer;
+  margin: 0;
+}
+.movie-list .dropdown-options .vector {
+  width: 12px;
   height: 8px;
 }
 .movie-list .movie-thumbnails {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+.movie-list .first-movie-thumbnail {
+  margin: 32px auto 20px;
+  position: relative;
+  cursor: pointer;
 }
 .movie-list .movie-thumbnail {
-  height: 146px;
   margin: 0 auto 20px;
   position: relative;
+  cursor: pointer;
 }
 .movie-list .last-movie-thumbnail {
-  height: 146px;
   margin: 0 auto 52px;
   position: relative;
+  cursor: pointer;
 }
 .movie-list .thumbnail-image {
-  width: 220px;
-  height: 146px;
+  width: 327px;
+  height: 172px;
 }
 .movie-list .thumbnail-overlay {
   position: absolute;
-  width: 220px;
-  height: 146px;
+  width: 327px;
+  padding: 0 5px;
   top: 0;
   bottom: 0;
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.movie-list .thumbnail-overlay .thumbnail-gradient-overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 22.78%, #000000 122.69%);
+  width: 327px;
+  height: 126px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 .movie-list .thumbnail-overlay .list-play-button {
   width: 48px;
   height: 48px;
-  margin: 49px auto 19px;
+  margin: 52px auto 24px;
   background-color: transparent;
+  z-index: 1;
 }
 .movie-list .thumbnail-overlay .movie-title {
-  font-family: "Bebas Neue";
+  font-family: "bebas-neue-by-fontfabric";
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 16px;
   letter-spacing: 4px;
   text-align: center;
   color: #ffffff;
-  margin: 0 0 14px;
+  margin: 0 0 32px;
+  z-index: 1;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 479px) {
+  .dropdown-options {
+    left: 0;
+    bottom: 0;
+  }
+}
+@media screen and (min-width: 900px) {
   .movie-list {
-    position: absolute;
     width: 220px;
-    top: 152px;
-    right: 104px;
-    margin: 0;
+    height: 746.8px;
+    margin: 8.6vh 7.2vw 0;
   }
-  .movie-list .last-movie-thumbnail {
-    margin: 0 auto;
+  .movie-list .dropdown-options {
+    width: 241px;
+    height: 102px;
+    background: url("../../../public/img/dropdown.png");
+    background-size: cover;
+    position: absolute;
+    right: 7.2vw;
+    margin-top: 8px;
+    padding: 30px 24px 24px;
+    box-sizing: border-box;
   }
-  .movie-list .list-play-button {
+  .movie-list .thumbnail-image {
+    width: 220px;
+    height: 146px;
+  }
+  .movie-list .thumbnail-overlay {
+    width: 220px;
+    padding: 0 10px;
+  }
+  .movie-list .thumbnail-overlay .thumbnail-gradient-overlay {
+    width: 220px;
+    height: 100px;
+  }
+  .movie-list .thumbnail-overlay .list-play-button {
     width: 40px;
     height: 40px;
     margin: 53px auto 23px;
+  }
+  .movie-list .thumbnail-overlay .movie-title {
+    margin: 0 0 14px;
+  }
+  .movie-list::-webkit-scrollbar {
+    width: 0;
   }
 }/*# sourceMappingURL=MovieList.css.map */

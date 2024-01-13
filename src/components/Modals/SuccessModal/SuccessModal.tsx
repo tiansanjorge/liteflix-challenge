@@ -36,9 +36,9 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
       centered
       className="overflow-hidden"
     >
-      {windowWidth < 480 && <MobileModalHeader onReset={onReset} />}
+      {windowWidth < 900 && <MobileModalHeader onReset={onReset} />}
       <div className="modal-header">
-        {windowWidth > 480 && (
+        {windowWidth > 900 && (
           <img
             className="close-button"
             onClick={onReset}
@@ -47,7 +47,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
           />
         )}
 
-        {windowWidth > 480 && (
+        {windowWidth > 900 && (
           <Modal.Title id="success-title">LITEFLIX</Modal.Title>
         )}
       </div>

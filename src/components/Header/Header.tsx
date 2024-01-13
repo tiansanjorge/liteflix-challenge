@@ -34,7 +34,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      {windowWidth < 480 ? (
+      {windowWidth < 900 ? (
         <div className="header">
           <img
             src="img/menu-mobile.png"
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
         </div>
       ) : (
         <div className="header">
-          <div className="section">
+          <div className="section-logo">
             <div className="logo">
               LITE<span className="logo2">FLIX</span>
             </div>
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
             </button>
           </div>
           <AddMovie show={showModal} onClose={handleCloseModal} />
-          <div className="section">
+          <div className="section-menu">
             <img src="img/menu.png" alt="menu" className="menu-icon" onClick={handleMenuIconClick}/>
             <img
               src="img/notificacion.png"

@@ -35,7 +35,7 @@ const Menu: React.FC<MenuProps> = ({ onClose }) => {
           <div className="menu-logo">
             LITE<span className="menu-logo2">FLIX</span>
           </div>
-          <div className="section">
+          <div className="section-menu">
             <img
               src="img/notificacion.png"
               alt="notificacion"

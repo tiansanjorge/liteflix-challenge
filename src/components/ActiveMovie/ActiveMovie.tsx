@@ -6,13 +6,16 @@ interface ActiveMovieProps {
 }
 
 const ActiveMovie: React.FC<ActiveMovieProps> = ({ title }) => {
-  return (
-    <div className="activeMovieContainer">
-      <p className="liteflix-original">
-        ORIGINAL DE <b>LITEFLIX</b>
-      </p>
-      <h1 className="movieTitle">{title}</h1>
+  const isTitleLong = title.length > 24;
 
+  return (
+    <div className="active-movie-container">
+      <p className="liteflix-original">
+        ORIGINAL DE <b><b>LITEFLIX</b></b>
+      </p>
+      <h1 className={`active-movie-title ${isTitleLong ? 'movie-title-reduced' : ''}`}>
+        {title}
+      </h1>
       <div className="buttons">
         <button className="main-play-button">
           <img src="img/play.png" alt="play" className="main-play-icon" />

@@ -33,9 +33,9 @@ const UploadFinished: React.FC<UploadFinishedProps> = ({
 
   return movieData ? (
     <Modal show={fileUploaded} onHide={onReset} centered>
-      {windowWidth < 480 && <MobileModalHeader onReset={onReset} />}
+      {windowWidth < 900 && <MobileModalHeader onReset={onReset} />}
       <div className="modal-header">
-      {windowWidth > 480 && <img
+      {windowWidth > 900 && <img
             className="close-button"
             onClick={onReset}
             src="img/close.png"
@@ -63,7 +63,7 @@ const UploadFinished: React.FC<UploadFinishedProps> = ({
         <button onClick={onUpload} className="upload-button">
           Subir Película
         </button>
-        {windowWidth < 480 && <button className="exit-button" onClick={onReset}>
+        {windowWidth < 900 && <button className="exit-button" onClick={onReset}>
             SALIR
           </button>}
       </Modal.Footer>

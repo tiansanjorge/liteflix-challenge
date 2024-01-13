@@ -1,80 +1,81 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 div.modal-dialog {
-  max-width: 730px;
+  max-width: 100vw;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 div.modal-content {
-  width: 730px;
+  width: 100vw;
+  min-height: 100vh;
   background: #242424;
   color: #ffffff;
   border: none;
   border-radius: 0;
-  padding: 24px;
+  padding: 2vh 3vh 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
-div.modal-content .modal-header {
+div.modal-content div.modal-header {
   border: none;
   display: flex;
   flex-direction: column;
   padding: 0;
 }
 div.modal-content div.modal-title {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 20px;
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
+  font-size: 22px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 22px;
   letter-spacing: 4px;
-  margin-top: 7px;
   color: #64eebc;
+  margin-bottom: 8.9vh;
 }
-div.modal-content .close-button {
-  cursor: pointer;
-  align-self: flex-end;
-}
-div.modal-content div.modal-body {
+div.modal-content .body-modal {
   padding: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+div.modal-content .container {
+  width: 87.2vw;
+  height: 10vh;
+  border: 1px dashed #ffffff;
+  padding: 0 10px;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-div.modal-content div.container {
-  margin-top: 48px;
-  width: 602px;
-  height: 100px;
-  border: 1px dashed #ffffff;
-  padding: 0;
-  box-sizing: border-box;
-}
-div.modal-content div.container .add-label {
+div.modal-content .container .add-label {
   display: flex;
-  flex-direction: center;
   cursor: pointer;
 }
-div.modal-content div.container p {
-  font-family: "Bebas Neue", sans-serif;
+div.modal-content .container p {
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 16px;
+  line-height: 28px;
   letter-spacing: 4px;
   text-align: center;
-  margin: 41px auto;
+  margin: 0;
 }
-div.modal-content div.container .clip {
+div.modal-content .container .clip {
   margin-right: 16px;
 }
-div.modal-content div.divider {
-  width: 248px;
-  height: 24px;
-  margin-top: 48px;
+div.modal-content .divider {
+  width: 66.1vw;
+  margin-top: 6.9vh;
   border-bottom: 1px solid #ffffff;
   box-sizing: border-box;
+  overflow: hidden;
 }
-div.modal-content div.divider p {
-  font-family: "Bebas Neue", sans-serif;
+div.modal-content .divider p {
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
@@ -89,15 +90,218 @@ div.modal-content div.modal-footer {
   padding: 0;
 }
 div.modal-content .upload-button {
-  width: 248px;
-  height: 56px;
+  width: 66.1vw;
+  height: 6.9vh;
   padding: 0;
   border: 0;
   border-radius: none;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
   letter-spacing: 4px;
-  margin: 48px 0 24px;
+  margin: 11.8vh 0 3vh;
+  color: #242424;
+}
+div.modal-content .exit-button {
+  width: 66.1vw;
+  height: 6.9vh;
+  padding: 0;
+  border: solid 1px rgba(255, 255, 255, 0.5019607843);
+  border-radius: none;
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 4px;
+  color: #ffffff;
+  background-color: transparent;
+  margin: 0;
+}
+
+.loading-container {
+  width: 87.2vw;
+  display: flex;
+  flex-direction: column;
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 4px;
+  margin-bottom: 8.3vh;
+}
+.loading-container .cancel {
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 4px;
+  text-align: end;
+  margin: 18px 0 0;
+  cursor: pointer;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: end;
+}
+
+.progress-uploading {
+  width: 100%;
+  border: none;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5019607843);
+}
+.progress-uploading::-webkit-progress-bar {
+  background-color: rgba(255, 255, 255, 0.5019607843);
+}
+.progress-uploading::-webkit-progress-value {
+  background-color: #64eebc;
+}
+.progress-uploading::-moz-progress-bar {
+  background-color: #64eebc;
+}
+
+.uploading-divider {
+  width: 66.1vw;
+  border-bottom: 1px solid #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.uploading-divider p {
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.progress-error {
+  width: 100%;
+  border: none;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5019607843);
+}
+.progress-error::-webkit-progress-value {
+  background-color: #ff0000;
+}
+.progress-error::-moz-progress-bar {
+  background-color: #ff0000;
+}
+
+.upload-finished-message {
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 4px;
+  text-align: end;
+  margin: 16px 0 0;
+  color: #64eebc;
+}
+
+.congratulations {
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 4px;
+  text-align: center;
+  margin: 11.8vh 0 3.9vh;
+}
+
+.success-message {
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 4px;
+  text-align: center;
+  margin: 0;
+}
+
+#home-button {
+  width: 66.1vw;
+  height: 6.9vh;
+  padding: 0;
+  border: 0;
+  border-radius: none;
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 4px;
+  margin-top: 16.4vh;
+}
+
+@media screen and (min-width: 900px) {
+  div.modal-content {
+    width: 50.7vw;
+    min-height: 47.2vh;
+    padding: 2.6vh 1.7vw;
+  }
+  div.modal-content div.modal-title {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 1vh 0 5.15vh;
+  }
+  div.modal-content .close-button {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin: 0;
+  }
+  div.modal-content .container {
+    width: 82.5%;
+    height: 10.7vh;
+  }
+  div.modal-content .divider {
+    width: 34%;
+    margin-top: 5.2vh;
+  }
+  div.modal-content .upload-button {
+    width: 34%;
+    height: 6vh;
+    margin: 5.2vh 0 2.6vh;
+  }
+  .loading-container {
+    width: 82.5%;
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 6.3vh;
+  }
+  .loading-container .cancel {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .uploading-divider {
+    width: 34%;
+  }
+  .upload-finished-message {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  #success-title {
+    margin: 2.7vh 0 0;
+    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 4px;
+  }
+  .congratulations {
+    margin: 7.72vh 0 2.6vh;
+  }
+  .success-message {
+    line-height: 24px;
+  }
+  #home-button {
+    width: 34%;
+    height: 6vh;
+    padding: 0;
+    border: 0;
+    margin: 9.9vh 0 2.6vh;
+  }
 }/*# sourceMappingURL=AddMovie.css.map */

@@ -34,10 +34,10 @@ const AddingMovie: React.FC<AddingMovieProps> = ({
   return (
     <>
       <Modal show={show} onHide={onReset} centered className="overflow-hidden">
-        {windowWidth < 480 && <MobileModalHeader onReset={onReset} />}
+        {windowWidth < 900 && <MobileModalHeader onReset={onReset} />}
 
         <div className="modal-header">
-        {windowWidth > 480 && <img
+        {windowWidth > 900 && <img
             className="close-button"
             onClick={onReset}
             src="img/close.png"
@@ -61,7 +61,7 @@ const AddingMovie: React.FC<AddingMovieProps> = ({
             <label className="add-label" htmlFor="upload-input">
               <p>
                 <img className="clip" src="img/clip.png" alt="clip" />
-                {windowWidth < 480 ? "AGREGA UN ARCHIVO" : "AGREGÁ UN ARCHIVO O ARRASTRALO Y SOLTALO AQUÍ"}
+                {windowWidth < 900 ? "AGREGA UN ARCHIVO" : "AGREGÁ UN ARCHIVO O ARRASTRALO Y SOLTALO AQUÍ"}
                 
               </p>
             </label>
@@ -74,7 +74,7 @@ const AddingMovie: React.FC<AddingMovieProps> = ({
           <button className="upload-button" disabled>
             SUBIR PELÍCULA
           </button>
-          {windowWidth < 480 && <button className="exit-button" onClick={onReset}>
+          {windowWidth < 900 && <button className="exit-button" onClick={onReset}>
             SALIR
           </button>}
         </Modal.Footer>

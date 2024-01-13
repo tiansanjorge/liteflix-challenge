@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import useActiveMovie from '../../helpers/useActiveMovie';
-import './AppContainer.scss';
-import Header from '../Header/Header';
-import ActiveMovie from '../ActiveMovie/ActiveMovie';
-import MovieList from '../MovieList/MovieList';
+import { useState, useEffect } from "react";
+import useActiveMovie from "../../helpers/useActiveMovie";
+import "./AppContainer.scss";
+import Header from "../Header/Header";
+import ActiveMovie from "../ActiveMovie/ActiveMovie";
+import MovieList from "../MovieList/MovieList";
 
 const AppContainer: React.FC = () => {
   const { movies, loading, error } = useActiveMovie();
-  const [selectedImagePath, setSelectedImagePath] = useState<string>('');
+  const [selectedImagePath, setSelectedImagePath] = useState<string>("");
 
   useEffect(() => {
     const handleResize = () => {
@@ -15,7 +15,7 @@ const AppContainer: React.FC = () => {
 
       if (selectedMovie) {
         const imageUrl =
-          window.innerWidth >= 480
+          window.innerWidth >= 900
             ? `https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path}`
             : `https://image.tmdb.org/t/p/original${selectedMovie.poster_path}`;
 
@@ -25,19 +25,27 @@ const AppContainer: React.FC = () => {
 
     handleResize();
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [movies]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <p className="loading-message">
+        LITE<span>FLIX</span>
+      </p>
+    );
   }
 
   if (error || movies.length === 0) {
-    return <p>There was an error loading the movie or no movies available.</p>;
+    return (
+      <p className="loading-message">
+        Unexpected error, <span>please contact support.</span>
+      </p>
+    );
   }
 
   const movieBackground = {
@@ -48,14 +56,15 @@ const AppContainer: React.FC = () => {
     <div className="app-container">
       <div className="content-container">
         <Header />
-        <ActiveMovie title={movies[18].title} />
-        <MovieList />
+        <div className="body">
+          <ActiveMovie title={movies[18].title} />
+          <MovieList />
+        </div>
       </div>
-      <div className="background-image" style={{ backgroundImage: `url(${selectedImagePath})` }}>
-      <div className="gradient-overlay" />
+      <div className="background-image" style={movieBackground}>
+        <div className="gradient-overlay" />
       </div>
     </div>
-    
   );
 };
 

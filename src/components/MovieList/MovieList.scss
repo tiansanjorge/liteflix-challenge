@@ -1,63 +1,64 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
 .movie-list {
-  width: 327px;
-  margin:64px auto 0;
+  width: 87.2vw;
+  margin: 7.9vh auto 0;
   box-sizing: border-box;
 
   .popular-link {
-    font-family: "Bebas Neue";
+    font-family: "bebas-neue-by-fontfabric";
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 18px;
     letter-spacing: 4px;
     display: block;
     color: #ffffff;
     background: transparent;
-    border:none;
+    border: none;
     margin: 0 auto 0;
     padding: 0;
   }
 
   .dropdown-arrow {
-    margin: 3px 0 0 11px;
+    margin: 4px 0 0 11px;
     vertical-align: top;
     width: 13px;
     height: 8px;
   }
 
-  .dropdown-options{
-    width:100vw;
-    position:fixed;
-    z-index:1;
+  .dropdown-options {
+    width: 100vw;
+    height: 112px;
+    position: fixed;
+    z-index: 2;
     padding: 32px 24px;
     box-sizing: border-box;
     background: #242424;
-  }
-
-  .dropdown-option{
-    position:relative;
-    font-family: "Bebas Neue";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 4px;
-    color:#ffffff;
-    z-index:1;
-    cursor: pointer;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    margin: 0;
-  }
 
-  .option-popular-movies{
-    margin-bottom:16px;
-  }
+    .dropdown-option-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  .vector{
-    width: 12px;
-    height: 8px;
+    .dropdown-option {
+      position: relative;
+      font-family: "bebas-neue-by-fontfabric";
+      font-size: 16px;
+      font-weight: 200;
+      line-height: 16px;
+      letter-spacing: 4px;
+      color: #ffffff;
+      z-index: 1;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .vector {
+      width: 12px;
+      height: 8px;
+    }
   }
 
   .movie-thumbnails {
@@ -67,106 +68,127 @@
   }
 
   .first-movie-thumbnail {
-    height: 146px;
     margin: 32px auto 20px;
     position: relative;
+    cursor: pointer;
   }
 
   .movie-thumbnail {
-    height: 146px;
     margin: 0 auto 20px;
     position: relative;
+    cursor: pointer;
   }
 
   .last-movie-thumbnail {
-    height: 146px;
     margin: 0 auto 52px;
     position: relative;
+    cursor: pointer;
   }
 
   .thumbnail-image {
-    width: 220px;
-    height: 146px;
+    width: 327px;
+    height: 172px;
   }
 
   .thumbnail-overlay {
     position: absolute;
-    width: 220px;
-    height: 146px;
+    width: 327px;
+    padding: 0 5px;
     top: 0;
     bottom: 0;
     left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
+    overflow: hidden;
+
+    .thumbnail-gradient-overlay {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 22.78%,
+        #000000 122.69%
+      );
+      width: 327px;
+      height: 126px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
 
     .list-play-button {
       width: 48px;
       height: 48px;
-      margin: 49px auto 19px;
+      margin: 52px auto 24px;
       background-color: transparent;
+      z-index: 1;
     }
 
     .movie-title {
-      font-family: "Bebas Neue";
+      font-family: "bebas-neue-by-fontfabric";
       font-size: 16px;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 16px;
       letter-spacing: 4px;
       text-align: center;
       color: #ffffff;
-      margin: 0 0 14px;
+      margin: 0 0 32px;
+      z-index: 1;
     }
   }
 }
 
 @media screen and (max-width: 479px) {
   .dropdown-options {
-      left: 0;
-      bottom: 0;
+    left: 0;
+    bottom: 0;
   }
 }
 
-
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 900px) {
   .movie-list {
-    position: absolute;
     width: 220px;
-    top: 152px;
-    right: 104px;
-    margin:0;
+    height: 746.8px;
+    margin: 8.6vh 7.2vw 0;
 
-    .dropdown-options{
-      width:241px;
+    .dropdown-options {
+      width: 241px;
       height: 102px;
-      background: url('../../../public/img/dropdown.png');
+      background: url("../../../public/img/dropdown.png");
       background-size: cover;
-      position:absolute;
-      right:0;
-      z-index:1;
-      margin-top:8px;
-      padding: 0 24px;
+      position: absolute;
+      right: 7.2vw;
+      margin-top: 8px;
+      padding: 30px 24px 24px;
       box-sizing: border-box;
     }
 
-    .option-popular-movies{
-      margin:30px 0 16px;
+    .thumbnail-image {
+      width: 220px;
+      height: 146px;
     }
-  
-    .option-my-movies{
-      margin-bottom:24px;
-    }
-  
 
-    .last-movie-thumbnail {
-      margin: 0 auto
-    }
+    .thumbnail-overlay {
+      width: 220px;
+      padding: 0 10px;
+
+      .thumbnail-gradient-overlay {
+        width: 220px;
+        height: 100px;
+      }
 
       .list-play-button {
         width: 40px;
         height: 40px;
         margin: 53px auto 23px;
       }
-    
+
+      .movie-title {
+        margin: 0 0 14px;
+      }
+    }
+  }
+
+  .movie-list::-webkit-scrollbar {
+    width: 0;
   }
 }

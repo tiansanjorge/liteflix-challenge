@@ -1,7 +1,7 @@
 .background {
   width: 100vw;
   height: 100vh;
-  background: #00000068;
+  background: rgba(0, 0, 0, 0.4078431373);
   position: fixed;
   top: 0;
   left: 0;
@@ -40,11 +40,11 @@
   color: #64EEBC;
 }
 
-.menu-logo2{
+.menu-logo2 {
   font-weight: 300;
 }
 
-.notification-icon{
+.notification-icon {
   display: none;
 }
 
@@ -87,7 +87,6 @@
 }
 
 @media screen and (min-width: 900px) {
-
   .menu-dropdown {
     width: 53vw;
     height: 100vh;
@@ -100,37 +99,29 @@
     flex-direction: column;
     align-items: center;
   }
-
   .menu-header {
     width: 100%;
   }
-
-  .section-menu{
+  .section-menu {
     justify-content: end;
   }
-
   .close-button {
     width: 18px;
     height: 18px;
   }
-
-  .menu-logo{
+  .menu-logo {
     display: none;
   }
-
-  .notification-icon{
+  .notification-icon {
     display: block;
   }
-
   .content {
     font-size: 22px;
     line-height: 22px;
   }
-
   .options p {
     margin: 0 0 4.3vh 0;
   }
-
   .menu-add-movie {
     font-size: 22px;
     line-height: 22px;
@@ -139,10 +130,9 @@
     margin: 3.4vh 0 7.7vh;
     padding: 0;
   }
-
   .menu-plus-icon {
     width: 14px;
     height: 14px;
     margin: 0px 12px 2px 0px;
   }
-}
+}/*# sourceMappingURL=Menu.css.map */

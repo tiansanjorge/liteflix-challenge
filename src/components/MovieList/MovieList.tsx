@@ -7,7 +7,8 @@ const MovieList: React.FC = () => {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const [showPopularMovies, setShowPopularMovies] = useState<boolean>(true);
   const [linkText, setLinkText] = useState<string>("POPULARES");
-  const [isPopularMoviesSelected, setIsPopularMoviesSelected] = useState<boolean>(true);
+  const [isPopularMoviesSelected, setIsPopularMoviesSelected] =
+    useState<boolean>(true);
   const [isMyMoviesSelected, setIsMyMoviesSelected] = useState<boolean>(false);
 
   const popularMovies: Movie[] = usePopularMovies();
@@ -48,7 +49,10 @@ const MovieList: React.FC = () => {
   return (
     <div className="movie-list">
       <button className="popular-link" onClick={toggleDropdown}>
-        VER: <b>{linkText}</b>
+        VER:{" "}
+        <b>
+          <b>{linkText}</b>
+        </b>
         <img
           src="img/arrow.png"
           alt="Dropdown Menu"
@@ -57,11 +61,19 @@ const MovieList: React.FC = () => {
       </button>
       {showDropdown && (
         <div className="dropdown-options">
-          <p
-            className="dropdown-option option-popular-movies"
-            onClick={handlePopularMoviesClick}
-          >
-            POPULARES{" "}
+          <div className="dropdown-option-container">
+            <p
+              className="dropdown-option option-popular-movies"
+              onClick={handlePopularMoviesClick}
+            >
+              {isPopularMoviesSelected ? (
+                <b>
+                  <b>POPULARES</b>
+                </b>
+              ) : (
+                "POPULARES"
+              )}
+            </p>
             <img
               src="img/vector.png"
               alt="selected"
@@ -69,12 +81,21 @@ const MovieList: React.FC = () => {
                 isPopularMoviesSelected ? "vector d-block" : "vector d-none"
               }
             />
-          </p>
-          <p
-            className="dropdown-option option-my-movies"
-            onClick={handleMyMoviesClick}
-          >
-            MIS PELICULAS
+          </div>
+
+          <div className="dropdown-option-container">
+            <p
+              className="dropdown-option option-my-movies"
+              onClick={handleMyMoviesClick}
+            >
+              {isMyMoviesSelected ? (
+                <b>
+                  <b>MIS PELICULAS</b>
+                </b>
+              ) : (
+                "MIS PELICULAS"
+              )}
+            </p>
             <img
               src="img/vector.png"
               alt="selected"
@@ -82,14 +103,14 @@ const MovieList: React.FC = () => {
                 isMyMoviesSelected ? "vector d-block" : "vector d-none"
               }
             />
-          </p>
+          </div>
         </div>
       )}
       <div className="movie-thumbnails">
         {movies.map((movie: Movie, index: number) => {
           const isLastMovie = index === movies.length - 1;
           const isFirstMovie = index === 0;
-          const thumbnailClass = isFirstMovie 
+          const thumbnailClass = isFirstMovie
             ? "first-movie-thumbnail"
             : isLastMovie
             ? "last-movie-thumbnail"
@@ -103,11 +124,7 @@ const MovieList: React.FC = () => {
                     ? `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`
                     : movie.image
                 }
-                alt={
-                  showPopularMovies
-                    ? movie.title
-                    : movie.name?.slice(0,-4)
-                }
+                alt={showPopularMovies ? movie.title : movie.name?.slice(0, -4)}
                 className="thumbnail-image"
               />
               <div className="thumbnail-overlay">
@@ -119,6 +136,7 @@ const MovieList: React.FC = () => {
                 <p className="movie-title">
                   {showPopularMovies ? movie.title : movie.name?.slice(0, -4)}
                 </p>
+                <div className="thumbnail-gradient-overlay" />
               </div>
             </div>
           );

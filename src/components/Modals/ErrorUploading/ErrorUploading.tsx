@@ -30,9 +30,9 @@ const ErrorUploading: React.FC<ErrorUploadingProps> = ({
   }, []);
   return movieData ? (
     <Modal show={fileUploaded} onHide={onReset} centered>
-      {windowWidth < 480 && <MobileModalHeader onReset={onReset} />}
+      {windowWidth < 900 && <MobileModalHeader onReset={onReset} />}
       <div className="modal-header">
-      {windowWidth > 480 && <img
+      {windowWidth > 900 && <img
             className="close-button"
             onClick={onReset}
             src="img/close.png"
@@ -43,7 +43,7 @@ const ErrorUploading: React.FC<ErrorUploadingProps> = ({
       <div className="body-modal">
         <div className="loading-container">
           <p><b>¡ERROR! </b> 
-          {windowWidth < 480 ? "NO SE PUDO CARGAR LA PELÍCULA"  : "NO SE HA PODIDO CARGAR LA PELÍCULA"}
+          {windowWidth < 900 ? "NO SE PUDO CARGAR LA PELÍCULA"  : "NO SE HA PODIDO CARGAR LA PELÍCULA"}
           </p>
           <progress className="progress-error" id="file" max="100" value="100">
             100%
@@ -60,7 +60,7 @@ const ErrorUploading: React.FC<ErrorUploadingProps> = ({
         <button disabled className="upload-button">
           Subir Película
         </button>
-        {windowWidth < 480 && <button className="exit-button" onClick={onReset}>
+        {windowWidth < 900 && <button className="exit-button" onClick={onReset}>
             SALIR
           </button>}
       </Modal.Footer>

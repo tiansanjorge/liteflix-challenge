@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .header {
   padding-top: 16px;
   margin: 0 auto;
-  width: 327px;
-  height: 36px;
+  width: 87.2vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,10 +12,11 @@
 .menu-icon {
   width: 27px;
   height: 12px;
+  cursor: pointer;
 }
 
 .logo {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "bebas-neue-by-fontfabric", sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 28px;
@@ -27,7 +26,7 @@
 }
 
 .logo2 {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .profile-icon {
@@ -35,25 +34,21 @@
   height: 36px;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 900px) {
   .header {
     padding-top: 32px;
-    width: 1232px;
-    min-height: 40px;
+    width: 85.6vw;
   }
-  .section {
+  .section-logo {
+    width: 44%;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
   .logo {
-    margin-right: 64px;
     font-size: 34px;
     line-height: 34px;
     text-align: left;
-  }
-  .logo2 {
-    font-weight: 400;
   }
   .header-plus-icon {
     width: 14px;
@@ -61,17 +56,23 @@
     margin-right: 12px;
   }
   .add-movie {
-    width: -moz-fit-content;
-    width: fit-content;
     height: 18px;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "bebas-neue-by-fontfabric", sans-serif;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 18px;
     letter-spacing: 4px;
     text-align: left;
     color: #ffffff;
-    text-decoration: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .section-menu {
+    width: 14%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .menu-icon {
     margin-right: 40px;
@@ -85,4 +86,24 @@
     width: 40px;
     height: 40px;
   }
-}/*# sourceMappingURL=header.css.map */
+}
+@media screen and (min-width: 1000px) {
+  .section-logo {
+    width: 41%;
+  }
+}
+@media screen and (min-width: 1150px) {
+  .section-logo {
+    width: 36%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section-logo {
+    width: 29.77%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .section-logo {
+    width: 27%;
+  }
+}/*# sourceMappingURL=Header.css.map */
