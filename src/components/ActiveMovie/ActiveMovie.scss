@@ -1,5 +1,4 @@
 .active-movie-container {
-  width: fit-content;
   margin: 26.4vh auto 0;
   text-align: center;
   padding: 0 24px;
@@ -23,12 +22,14 @@
   letter-spacing: 10px;
   margin: 0;
   color: #64EEBC;
+  width: fit-content;
 }
 
 .movie-title-reduced{
   font-size: 40px;
   line-height: 50px;
   letter-spacing: 7px;
+  width: fit-content;
 }
 
 .main-play-button {
@@ -99,12 +100,33 @@
     line-height: 77.5px;
     letter-spacing: 12px;
   }
+
+  .movie-title-reduced{
+    font-size: 48px;
+    line-height: 50px;
+    letter-spacing: 8px;
+  }
 }
 
 @media screen and (min-width: 480px) {
   .activeMovieContainer {
     margin: 26.4vh 10vw 0;
   }
+}
+
+@media screen and (min-width: 650px) {
+  .active-movie-title {
+    font-size: 83px;
+    line-height: 75px;
+    letter-spacing: 12px;
+  }
+
+  .movie-title-reduced{
+    font-size: 55px;
+    line-height: 59px;
+    letter-spacing: 9px;
+  }
+
 }
 
 @media screen and (min-width: 900px) {
@@ -127,7 +149,7 @@
 
   .movie-title-reduced{
     font-size: 64px;
-    line-height: 70px;
+    line-height: 65px;
     letter-spacing: 10px;
   }
   
@@ -153,5 +175,11 @@
     font-size: 120px;
     line-height: 100px;
     letter-spacing: 16px;
+  }
+
+  .movie-title-reduced{
+    font-size: 75px;
+    line-height: 75px;
+    letter-spacing: 12px;
   }
 }

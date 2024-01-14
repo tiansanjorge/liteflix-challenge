@@ -115,7 +115,7 @@ const MovieList: React.FC = () => {
       )}
       <div className="movie-thumbnails">
         {moviesToDisplay.map((movie: Movie, index: number) => {
-          const isLastMovie = index === movies.length - 1;
+          const isLastMovie = index === moviesToDisplay.length - 1;
           const isFirstMovie = index === 0;
           const thumbnailClass = isFirstMovie
             ? "first-movie-thumbnail"
