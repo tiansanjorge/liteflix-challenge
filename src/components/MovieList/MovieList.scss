@@ -28,7 +28,7 @@
     width: 100vw;
     height: 112px;
     position: fixed;
-    bottom:0;
+    bottom: 0;
     z-index: 2;
     padding: 32px 24px;
     box-sizing: border-box;
@@ -102,6 +102,70 @@
     justify-content: flex-end;
     overflow: hidden;
 
+    .play-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .list-play-button {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 24px;
+      background: url("../../../public/img/popular-play.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+
+    .movie-title {
+      font-family: "bebas-neue-by-fontfabric";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 4px;
+      text-align: center;
+      color: #ffffff;
+      margin: 0 0 32px;
+      z-index: 1;
+    }
+
+    .rating-release {
+      display: none;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      overflow: hidden;
+      margin: 16px 24px 24px 24px;
+    }
+
+    .star {
+      width: 12px;
+      height: 12px;
+      margin-right: 6px;
+    }
+
+    .rating {
+      font-family: "bebas-neue-by-fontfabric";
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 12px;
+      letter-spacing: 2px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+    }
+
+    .release {
+      font-family: "bebas-neue-by-fontfabric";
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 12px;
+      letter-spacing: 2px;
+      color: #ffffff;
+    }
+
     .thumbnail-gradient-overlay {
       background: linear-gradient(
         180deg,
@@ -114,26 +178,45 @@
       bottom: 0;
       left: 0;
     }
+  }
+
+  .thumbnail-overlay:hover {
+    background: #242424b2;
+    padding: 0;
+  }
+
+  .thumbnail-overlay:hover .play-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 100%;
 
     .list-play-button {
-      width: 48px;
-      height: 48px;
-      margin: 52px auto 24px;
-      background-color: transparent;
-      z-index: 1;
+      width: 32px;
+      height: 32px;
+      margin: 0 16px 0 24px;
+      &:hover {
+        background: url("../../../public/img/play-hover.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
     }
-
     .movie-title {
-      font-family: "bebas-neue-by-fontfabric";
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 16px;
-      letter-spacing: 4px;
-      text-align: center;
-      color: #ffffff;
-      margin: 0 0 32px;
-      z-index: 1;
+      width: 243px;
+      margin: 0;
+      text-align: start;
     }
+  }
+
+  .thumbnail-overlay:hover .rating-release {
+    display: flex;
+  }
+
+  .thumbnail-overlay:hover .thumbnail-gradient-overlay {
+    display: none;
   }
 }
 
@@ -144,11 +227,11 @@
       height: 102px;
       position: absolute;
       left: 50%;
-      bottom:initial;
+      bottom: initial;
       margin-top: 8px;
       padding: 30px 24px 24px;
       box-sizing: border-box;
-      transform: translate(-50%)
+      transform: translate(-50%);
     }
   }
 }
@@ -163,14 +246,13 @@
       justify-content: space-evenly;
       overflow: hidden;
       flex-wrap: wrap;
-      padding-bottom:7.9vh;
+      padding-bottom: 7.9vh;
     }
 
-  
     .first-movie-thumbnail {
       margin: 28px 20px 0 0;
     }
-  
+
     .movie-thumbnail {
       margin: 28px 20px 0 0;
     }
@@ -196,18 +278,35 @@
       .list-play-button {
         width: 40px;
         height: 40px;
-        margin: 53px auto 23px;
+        margin: 0 auto 23px;
       }
 
       .movie-title {
         margin: 0 0 14px;
+      }
+
+      .rating-release {
+        margin: 0 16px 16px 16px;
+      }
+    }
+
+    .thumbnail-overlay:hover .play-title {
+      margin-bottom: 20px;
+
+      .list-play-button {
+        width: 24px;
+        height: 24px;
+        margin: 0 12px 0 16px;
+      }
+      .movie-title {
+        width: 152px;
       }
     }
   }
 }
 
 @media screen and (min-width: 1078px) {
-  .movie-list{
+  .movie-list {
     .last-movie-thumbnail {
       margin: 28px 0 0 0;
     }
@@ -222,7 +321,7 @@
 
     .movie-thumbnails {
       flex-direction: column;
-      padding-bottom:0;
+      padding-bottom: 0;
     }
 
     .dropdown-options {
@@ -231,7 +330,7 @@
       background: url("../../../public/img/dropdown.png");
       background-size: cover;
       position: absolute;
-      left:initial;
+      left: initial;
       right: 7.2vw;
       transform: initial;
       margin-top: 8px;
@@ -242,11 +341,11 @@
     .first-movie-thumbnail {
       margin: 32px auto 20px;
     }
-  
+
     .movie-thumbnail {
       margin: 0 auto 20px;
     }
-  
+
     .last-movie-thumbnail {
       margin: 0 auto 52px;
     }

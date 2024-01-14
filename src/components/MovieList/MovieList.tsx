@@ -6,7 +6,7 @@ import "./MovieList.scss";
 const MovieList: React.FC = () => {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const [showPopularMovies, setShowPopularMovies] = useState<boolean>(true);
-  const [linkText, setLinkText] = useState<string>("POPULARES");
+  const [category, setCategory] = useState<string>("POPULARES");
   const [isPopularMoviesSelected, setIsPopularMoviesSelected] =
     useState<boolean>(true);
   const [isMyMoviesSelected, setIsMyMoviesSelected] = useState<boolean>(false);
@@ -31,7 +31,7 @@ const MovieList: React.FC = () => {
   const handlePopularMoviesClick = (): void => {
     setShowPopularMovies(true);
     setShowDropdown(false);
-    setLinkText("POPULARES");
+    setCategory("POPULARES");
     setIsPopularMoviesSelected(true);
     setIsMyMoviesSelected(false);
   };
@@ -39,7 +39,7 @@ const MovieList: React.FC = () => {
   const handleMyMoviesClick = (): void => {
     setShowPopularMovies(false);
     setShowDropdown(false);
-    setLinkText("MIS PELÍCULAS");
+    setCategory("MIS PELÍCULAS");
     setIsMyMoviesSelected(true);
     setIsPopularMoviesSelected(false);
   };
@@ -51,7 +51,7 @@ const MovieList: React.FC = () => {
       <button className="popular-link" onClick={toggleDropdown}>
         VER:{" "}
         <b>
-          <b>{linkText}</b>
+          <b>{category}</b>
         </b>
         <img
           src="img/arrow.png"
@@ -128,14 +128,26 @@ const MovieList: React.FC = () => {
                 className="thumbnail-image"
               />
               <div className="thumbnail-overlay">
-                <img
-                  src="img/popular-play.png"
-                  alt="Play Button"
-                  className="list-play-button"
-                />
-                <p className="movie-title">
-                  {showPopularMovies ? movie.title : movie.name?.slice(0, -4)}
-                </p>
+                <div className="play-title">
+                  <div
+                    className="list-play-button"
+                  />
+                  <p className="movie-title">
+                    {showPopularMovies ? movie.title : movie.name?.slice(0, -4)}
+                  </p>
+                </div>
+                <div className={showPopularMovies ? "rating-release" : "d-none"}>
+                  <div className="rating">
+                    <img src="img/star.png" alt="rating" className="star" />
+                    <p className="m-0">
+                    {movie.vote_average?.toFixed(1)}
+                    </p>
+                  </div>
+                  <div className="release">
+                    {movie.release_date?.slice(0, -6)}
+                  </div>
+                </div>
+
                 <div className="thumbnail-gradient-overlay" />
               </div>
             </div>
