@@ -8,7 +8,7 @@ const useMyMovies = () => {
       if (myMovies) {
         try {
           const parsedMovies = JSON.parse(myMovies);
-          const firstFourMovies = parsedMovies.slice(0, 4);
+          const firstFourMovies = parsedMovies.slice(0, 6);
           setMovies(firstFourMovies);
         } catch (error) {
           console.error('Error al parsear las películas:', error);
