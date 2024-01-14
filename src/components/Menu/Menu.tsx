@@ -49,7 +49,7 @@ const Menu: React.FC<MenuProps> = ({ onClose }) => {
             <p>INICIO</p>
             <p>SERIES</p>
             <p>PELICULAS</p>
-            <p>AGREGADAS RECIENTEMENTE</p>
+            <p>AGREGADAS RECIENTEMENT</p>
             <p>POPULARES</p>
             <p>MIS PELICULAS</p>
             <p>MI LISTA</p>
