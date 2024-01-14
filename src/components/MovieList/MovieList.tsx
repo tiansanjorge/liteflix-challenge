@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useMedia } from "react-use";
 import usePopularMovies from "../../helpers/usePopularMovies";
 import useMyMovies from "../../helpers/useMyMovies";
 import "./MovieList.scss";
@@ -45,6 +46,12 @@ const MovieList: React.FC = () => {
   };
 
   const movies: Movie[] = showPopularMovies ? popularMovies : myMovies;
+  const screenSize = useMedia("(min-width: 826px) and (max-width: 1100px)");
+  const moviesToDisplay: Movie[] = movies
+    ? screenSize
+      ? movies.slice(0, 6)
+      : movies.slice(0, 4)
+    : popularMovies.slice(0, 4);
 
   return (
     <div className="movie-list">
@@ -107,7 +114,7 @@ const MovieList: React.FC = () => {
         </div>
       )}
       <div className="movie-thumbnails">
-        {movies.map((movie: Movie, index: number) => {
+        {moviesToDisplay.map((movie: Movie, index: number) => {
           const isLastMovie = index === movies.length - 1;
           const isFirstMovie = index === 0;
           const thumbnailClass = isFirstMovie

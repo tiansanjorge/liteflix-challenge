@@ -18,7 +18,7 @@ const usePopularMovies = () => {
       try {
         const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`);
         const data = response.data;
-        const moviesData = data.results.slice(1, 5).map((movie: any) => ({
+        const moviesData = data.results.slice(1, 7).map((movie: any) => ({
           id: movie.id,
           title: movie.title,
           release_date: movie.release_date,
