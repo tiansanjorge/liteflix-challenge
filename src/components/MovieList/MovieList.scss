@@ -107,6 +107,7 @@
       flex-direction: column;
       justify-content: flex-end;
       overflow: hidden;
+      color:transparent
     }
 
     .list-play-button {
@@ -183,6 +184,7 @@
   .thumbnail-overlay:hover {
     background: #242424b2;
     padding: 0;
+    transition: background 0.3s ease-in
   }
 
   .thumbnail-overlay:hover .play-title {
@@ -193,11 +195,13 @@
     overflow: hidden;
     margin-bottom: 20px;
     width: 100%;
+    transition:0.3s;
 
     .list-play-button {
       width: 32px;
       height: 32px;
       margin: 0 16px 0 24px;
+      
       &:hover {
         background: url("../../../public/img/play-hover.png");
         background-size: contain;
