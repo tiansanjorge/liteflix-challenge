@@ -33,7 +33,7 @@ const AppContainer: React.FC = () => {
       <div className="content-container">
         <Header />
         <div className="body">
-          <ActiveMovie title={movies[6].title} />
+          <ActiveMovie title={movies[0].title} />
           <MovieList />
         </div>
       </div>
