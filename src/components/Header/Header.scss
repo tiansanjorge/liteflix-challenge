@@ -1,97 +1,92 @@
+$font-family: "bebas-neue-by-fontfabric", sans-serif;
+$primary-color: #64EEBC;
+$mobile-header-padding-top: 16px;
+$desktop-header-padding-top: 32px;
+$desktop-header-width: 85.6vw;
+
 .header {
-  padding-top: 16px;
+  padding-top: $mobile-header-padding-top;
+  padding-left: 7%;
+  padding-right: 7%;
   margin: 0 auto;
-  width: 87.2vw;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items:center;
-  box-sizing: content-box;
-}
-
-.menu-icon {
-  width: 27px;
-  height: 12px;
-  cursor: pointer;
-}
-
-.logo {
-  font-family: "bebas-neue-by-fontfabric", sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 28px;
-  letter-spacing: 4px;
-  text-align: center;
-  color: #64EEBC;
-}
-
-.logo2{
-  font-weight: 300;
-}
-
-.profile-icon {
-  width: 36px;
-  height: 36px;
-}
-
-@media screen and (min-width: 900px) {
-
-  .header {
-    padding-top: 32px;
-    width: 85.6vw;
-  }
+  width: 100vw;
+  display: flex;
+  align-items: center;
   
-  .section-logo{
-    display:flex;
-    align-items: center;
-  }
-  
-  .logo {
-    font-size: 34px;
-    line-height: 34px;
-    text-align: left;
-    margin-right: 64px;
-  }
-  
-  .header-plus-icon {
-    width: 14px;
-    height: 14px;
-    margin-right: 12px;
-  }
-  
-  .add-movie {
-    height: 18px;
-    font-family: "bebas-neue-by-fontfabric", sans-serif;
-    font-size: 18px;
+  &__logo {
+    font-family: $font-family;
+    font-size: 28px;
     font-weight: 700;
-    line-height: 18px;
+    line-height: 28px;
     letter-spacing: 4px;
-    text-align: left;
-    color: #ffffff;
-    background: transparent;
-    border:none;
-    padding: 0;
+    text-align: center;
+    color: $primary-color;
+
+    &-part2 {
+      font-weight: 300;
+    }
   }
 
-  .section-menu{
-    width: 14%;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .menu-icon {
-    margin-right: 40px;
-  }
-  
-  .notification-icon {
-    margin-right: 40px;
-    width: 26px;
-    height: 26px;
-  }
-  
-  .profile-icon {
-    width: 40px;
-    height: 40px;
-  }
+    &__section-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    &__logo {
+      font-size: 34px;
+      line-height: 34px;
+      text-align: left;
+      margin-right: 64px;
+    }
+
+    &__header-plus-icon {
+      width: 14px;
+      height: 14px;
+      margin-right: 12px;
+    }
+
+    &__add-movie {
+      height: 18px;
+      font-family: $font-family;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 18px;
+      letter-spacing: 4px;
+      text-align: left;
+      color: #ffffff;
+      background: transparent;
+      border: none;
+      padding: 0;
+
+      &__icon {
+        width: 14px;
+        height: 14px;
+        margin-right: 12px;
+      }
+    }
+
+    &__section-menu {
+      width: 14%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__notification-icon {
+      margin-right: 40px;
+      width: 26px;
+      height: 26px;
+    }
+
+    &__profile-icon {
+      width: 40px;
+      height: 40px;
+    }
+    &__menu-icon {
+      width: 27px;
+      height: 12px;
+      cursor: pointer;
+      margin-left: auto;
+      margin-right: 55px;
+    }
 }
