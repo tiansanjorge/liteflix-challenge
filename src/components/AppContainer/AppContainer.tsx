@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import useActiveMovie from "../../helpers/useActiveMovie";
 import "./AppContainer.scss";
-import Header from "../Desktop Header/DesktopHeader";
+import Header from "../DesktopHeader/DesktopHeader";
 import ActiveMovie from "../ActiveMovie/ActiveMovie";
 import MovieList from "../MovieList/MovieList";
 
