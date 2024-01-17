@@ -14,7 +14,7 @@ div.modal-content {
   color: #ffffff;
   border: none;
   border-radius: 0;
-  padding: 2vh 3vh 0;
+  padding: 2vh 6.4vw 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -68,7 +68,7 @@ div.modal-content .container .clip {
   margin-right: 16px;
 }
 div.modal-content .divider {
-  width: 66.1vw;
+  width: 248px;
   margin-top: 6.9vh;
   border-bottom: 1px solid #ffffff;
   box-sizing: border-box;
@@ -86,12 +86,13 @@ div.modal-content .divider p {
 div.modal-content div.modal-footer {
   border: none;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 0;
 }
 div.modal-content .upload-button {
-  width: 66.1vw;
-  height: 6.9vh;
+  width: 248px;
+  height: 56px;
   padding: 0;
   border: 0;
   border-radius: none;
@@ -104,8 +105,8 @@ div.modal-content .upload-button {
   color: #242424;
 }
 div.modal-content .exit-button {
-  width: 66.1vw;
-  height: 6.9vh;
+  width: 248px;
+  height: 56px;
   padding: 0;
   border: solid 1px rgba(255, 255, 255, 0.5019607843);
   border-radius: none;
@@ -162,7 +163,7 @@ div.modal-content .exit-button {
 }
 
 .uploading-divider {
-  width: 66.1vw;
+  width: 248px;
   border-bottom: 1px solid #ffffff;
   box-sizing: border-box;
   overflow: hidden;
@@ -222,8 +223,8 @@ div.modal-content .exit-button {
 }
 
 #home-button {
-  width: 66.1vw;
-  height: 6.9vh;
+  width: 248px;
+  height: 56px;
   padding: 0;
   border: 0;
   border-radius: none;
@@ -235,16 +236,24 @@ div.modal-content .exit-button {
   margin-top: 16.4vh;
 }
 
+@media screen and (min-width: 480px) {
+  div.modal-content .container {
+    width: 60vw;
+  }
+  .loading-container {
+    width: 60vw;
+  }
+}
 @media screen and (min-width: 900px) {
   div.modal-content {
-    width: 50.7vw;
-    min-height: 47.2vh;
-    padding: 2.6vh 1.7vw;
+    width: 730px;
+    min-height: auto;
+    padding: 24px;
   }
   div.modal-content div.modal-title {
     font-size: 20px;
     line-height: 20px;
-    margin: 1vh 0 5.15vh;
+    margin: 9px 0 48px;
   }
   div.modal-content .close-button {
     width: 15px;
@@ -254,37 +263,31 @@ div.modal-content .exit-button {
     margin: 0;
   }
   div.modal-content .container {
-    width: 82.5%;
-    height: 10.7vh;
+    width: 602px;
+    height: 100px;
   }
   div.modal-content .divider {
-    width: 34%;
-    margin-top: 5.2vh;
+    margin-top: 48px;
   }
   div.modal-content .upload-button {
-    width: 34%;
-    height: 6vh;
-    margin: 5.2vh 0 2.6vh;
+    margin: 48px 0 24px;
   }
   .loading-container {
-    width: 82.5%;
+    width: 602px;
     font-size: 16px;
     line-height: 16px;
-    margin-bottom: 6.3vh;
+    margin-bottom: 59px;
   }
   .loading-container .cancel {
     font-size: 18px;
     line-height: 18px;
-  }
-  .uploading-divider {
-    width: 34%;
   }
   .upload-finished-message {
     font-size: 18px;
     line-height: 18px;
   }
   #success-title {
-    margin: 2.7vh 0 0;
+    margin: 25px 0 0;
     font-family: "bebas-neue-by-fontfabric", sans-serif;
     font-size: 34px;
     font-weight: 700;
@@ -292,16 +295,14 @@ div.modal-content .exit-button {
     letter-spacing: 4px;
   }
   .congratulations {
-    margin: 7.72vh 0 2.6vh;
+    margin: 72px 0 24px;
   }
   .success-message {
     line-height: 24px;
   }
   #home-button {
-    width: 34%;
-    height: 6vh;
     padding: 0;
     border: 0;
-    margin: 9.9vh 0 2.6vh;
+    margin: 92px 0 24px;
   }
 }/*# sourceMappingURL=AddMovie.css.map */

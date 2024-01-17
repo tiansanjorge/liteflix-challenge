@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import useActiveMovie from "../../helpers/useActiveMovie";
 import "./AppContainer.scss";
-import Header from "../Header/Header";
+import Header from "../Desktop Header/DesktopHeader";
 import ActiveMovie from "../ActiveMovie/ActiveMovie";
 import MovieList from "../MovieList/MovieList";
 
@@ -25,7 +25,7 @@ const AppContainer: React.FC = () => {
   }
 
   const movieBackground = {
-    backgroundImage: `url(https://image.tmdb.org/t/p/original${movies[0].backdrop_path})`,
+    backgroundImage: `url(https://image.tmdb.org/t/p/original${movies[1].backdrop_path})`,
   };
 
   return (
@@ -33,7 +33,7 @@ const AppContainer: React.FC = () => {
       <div className="content-container">
         <Header />
         <div className="body">
-          <ActiveMovie title={movies[0].title} />
+          <ActiveMovie title={movies[1].title} />
           <MovieList />
         </div>
       </div>

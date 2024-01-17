@@ -8,7 +8,7 @@ const ProfileComponent = () => {
             <img
                 src="img/notificacion.png"
                 alt="notificacion"
-                className="Profile__notification"
+                className="profile__notification"
             />
             <img src="img/perfil.png" alt="perfil" className="profile__icon" />
         </div>

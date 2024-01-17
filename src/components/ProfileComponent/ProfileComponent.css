@@ -1,0 +1,15 @@
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 125px;
+}
+.profile__notification {
+  margin-right: 40px;
+  width: 26px;
+  height: 26px;
+}
+.profile__icon {
+  width: 40px;
+  height: 40px;
+}/*# sourceMappingURL=ProfileComponent.css.map */

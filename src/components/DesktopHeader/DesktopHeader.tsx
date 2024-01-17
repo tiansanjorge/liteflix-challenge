@@ -1,11 +1,11 @@
-// Header.tsx
-import React, { useEffect, useState } from "react";
-import "./Header.scss";
+// DesktopHeader.tsx
+import React, { useState } from "react";
+import "./DesktopHeader.scss";
 import AddMovie from "../AddMovie/AddMovie";
 import Menu from "../Menu/Menu";
 import ProfileComponent from "../ProfileComponent/ProfileComponent";
 
-const Header: React.FC = () => {
+const DesktopHeader: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -34,12 +34,10 @@ const Header: React.FC = () => {
       </div>
       <AddMovie show={showModal} onClose={handleCloseModal} />
       <img src="img/menu.png" alt="menu" className="header__menu-icon" onClick={handleMenuIconClick} />
-    
         <ProfileComponent />
-     
       {showMenu && <Menu onClose={() => setShowMenu(false)} />}
     </header>
   );
 };
 
-export default Header;
+export default DesktopHeader;

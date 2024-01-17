@@ -12,7 +12,12 @@
   width: 100vw;
   min-height: 100vh;
   background-color: #242424;
-  padding: 2vh 6.4vw 0;
+  padding: 2vh 6.4vw 2vh;
+  overflow: scroll;
+}
+
+.menu-dropdown::-webkit-scrollbar {
+  width: 0px;
 }
 
 .menu-header {
