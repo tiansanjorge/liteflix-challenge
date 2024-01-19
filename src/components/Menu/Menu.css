@@ -3,7 +3,7 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.4078431373);
   position: fixed;
-  top: 0;
+  top: 60px;
   left: 0;
   z-index: 3;
 }
@@ -92,6 +92,9 @@
 }
 
 @media screen and (min-width: 900px) {
+  .background {
+    top: 0;
+  }
   .menu-dropdown {
     width: 53vw;
     height: 100vh;

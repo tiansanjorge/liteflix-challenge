@@ -1,11 +1,9 @@
 $font-family: "bebas-neue-by-fontfabric", sans-serif;
 $primary-color: #64eebc;
-$mobile-header-padding-top: 16px;
 $desktop-header-padding-top: 32px;
-$desktop-header-width: 85.6vw;
 
-.header {
-  padding-top: $mobile-header-padding-top;
+.desktop-header {
+  padding-top: $desktop-header-padding-top;
   padding-left: 7%;
   padding-right: 7%;
   margin: 0 auto;

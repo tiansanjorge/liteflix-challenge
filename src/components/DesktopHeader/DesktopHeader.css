@@ -1,5 +1,5 @@
-.header {
-  padding-top: 16px;
+.desktop-header {
+  padding-top: 32px;
   padding-left: 7%;
   padding-right: 7%;
   margin: 0 auto;
@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
 }
-.header__logo {
+.desktop-header__logo {
   font-family: "bebas-neue-by-fontfabric", sans-serif;
   font-size: 28px;
   font-weight: 700;
@@ -16,25 +16,25 @@
   text-align: center;
   color: #64eebc;
 }
-.header__logo-part2 {
+.desktop-header__logo-part2 {
   font-weight: 300;
 }
-.header__section-logo {
+.desktop-header__section-logo {
   display: flex;
   align-items: center;
 }
-.header__logo {
+.desktop-header__logo {
   font-size: 34px;
   line-height: 34px;
   text-align: left;
   margin-right: 64px;
 }
-.header__header-plus-icon {
+.desktop-header__header-plus-icon {
   width: 14px;
   height: 14px;
   margin-right: 12px;
 }
-.header__add-movie {
+.desktop-header__add-movie {
   height: 18px;
   font-family: "bebas-neue-by-fontfabric", sans-serif;
   font-size: 18px;
@@ -47,22 +47,22 @@
   border: none;
   padding: 0;
 }
-.header__section-menu {
+.desktop-header__section-menu {
   width: 14%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.header__notification-icon {
+.desktop-header__notification-icon {
   margin-right: 40px;
   width: 26px;
   height: 26px;
 }
-.header__profile-icon {
+.desktop-header__profile-icon {
   width: 40px;
   height: 40px;
 }
-.header__menu-icon {
+.desktop-header__menu-icon {
   width: 27px;
   height: 12px;
   cursor: pointer;

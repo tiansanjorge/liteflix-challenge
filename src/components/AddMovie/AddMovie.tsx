@@ -12,20 +12,23 @@ interface AddMovieProps {
   onClose: () => void;
 }
 
+interface MovieData {
+  name: string;
+  image: string;
+}
+
+type CurrentModal =
+  | "AddingMovie"
+  | "UploadingMovie"
+  | "ErrorUploading"
+  | "UploadFinished"
+  | "SuccessModal"
+  | null;
+
 const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
-  const [movieData, setMovieData] = useState<{
-    name: string;
-    image: string;
-  } | null>(null);
+  const [movieData, setMovieData] = useState<MovieData | null>(null);
   const [fileUploaded, setFileUploaded] = useState(false);
-  const [currentModal, setCurrentModal] = useState<
-    | "AddingMovie"
-    | "UploadingMovie"
-    | "ErrorUploading"
-    | "UploadFinished"
-    | "SuccessModal"
-    | null
-  >(null);
+  const [currentModal, setCurrentModal] = useState<CurrentModal>(null);
 
   useEffect(() => {
     if (show === true) {

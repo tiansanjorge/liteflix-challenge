@@ -55,7 +55,7 @@ const MovieList: React.FC = () => {
 
   return (
     <div className="movie-list">
-      <button className="popular-link" onClick={toggleDropdown}>
+      <button className="movie-list__popular-link" onClick={toggleDropdown}>
         VER:{" "}
         <b>
           <b>{category}</b>
@@ -63,14 +63,14 @@ const MovieList: React.FC = () => {
         <img
           src="img/arrow.png"
           alt="Dropdown Menu"
-          className="dropdown-arrow"
+          className="movie-list__dropdown-arrow"
         />
       </button>
       {showDropdown && (
-        <div className="dropdown-options">
-          <div className="dropdown-option-container">
+        <div className="movie-list__dropdown-options">
+          <div className="movie-list__dropdown-option-container">
             <p
-              className="dropdown-option option-popular-movies"
+              className="movie-list__dropdown-option movie-list__option-popular-movies"
               onClick={handlePopularMoviesClick}
             >
               {isPopularMoviesSelected ? (
@@ -85,14 +85,14 @@ const MovieList: React.FC = () => {
               src="img/vector.png"
               alt="selected"
               className={
-                isPopularMoviesSelected ? "vector d-block" : "vector d-none"
+                isPopularMoviesSelected ? "movie-list__vector d-block" : "movie-list__vector d-none"
               }
             />
           </div>
 
-          <div className="dropdown-option-container">
+          <div className="movie-list__dropdown-option-container">
             <p
-              className="dropdown-option option-my-movies"
+              className="movie-list__dropdown-option movie-list__option-my-movies"
               onClick={handleMyMoviesClick}
             >
               {isMyMoviesSelected ? (
@@ -107,21 +107,21 @@ const MovieList: React.FC = () => {
               src="img/vector.png"
               alt="selected"
               className={
-                isMyMoviesSelected ? "vector d-block" : "vector d-none"
+                isMyMoviesSelected ? "movie-list__vector d-block" : "movie-list__vector d-none"
               }
             />
           </div>
         </div>
       )}
-      <div className="movie-thumbnails">
+      <div className="movie-list__movie-thumbnails">
         {moviesToDisplay.map((movie: Movie, index: number) => {
           const isLastMovie = index === moviesToDisplay.length - 1;
           const isFirstMovie = index === 0;
           const thumbnailClass = isFirstMovie
-            ? "first-movie-thumbnail"
+            ? "movie-list__first-movie-thumbnail"
             : isLastMovie
-            ? "last-movie-thumbnail"
-            : "movie-thumbnail";
+            ? "movie-list__last-movie-thumbnail"
+            : "movie-list__movie-thumbnail";
 
           return (
             <div key={index} className={thumbnailClass}>
@@ -132,30 +132,30 @@ const MovieList: React.FC = () => {
                     : movie.image
                 }
                 alt={showPopularMovies ? movie.title : movie.name?.slice(0, -4)}
-                className="thumbnail-image"
+                className="movie-list__thumbnail-image"
               />
-              <div className="thumbnail-overlay">
-                <div className="play-title">
+              <div className="movie-list__thumbnail-overlay">
+                <div className="movie-list__play-title">
                   <div
-                    className="list-play-button"
+                    className="movie-list__play-button"
                   />
-                  <p className="movie-title">
+                  <p className="movie-list__movie-title">
                     {showPopularMovies ? movie.title : movie.name?.slice(0, -4)}
                   </p>
                 </div>
-                <div className={showPopularMovies ? "rating-release" : "d-none"}>
-                  <div className="rating">
-                    <img src="img/star.png" alt="rating" className="star" />
+                <div className={showPopularMovies ? "movie-list__rating-release" : "d-none"}>
+                  <div className="movie-list__rating">
+                    <img src="img/star.png" alt="rating" className="movie-list__star" />
                     <p className="m-0">
                     {movie.vote_average?.toFixed(1)}
                     </p>
                   </div>
-                  <div className="release">
+                  <div className="movie-list__release">
                     {movie.release_date?.slice(0, -6)}
                   </div>
                 </div>
 
-                <div className="thumbnail-gradient-overlay" />
+                <div className="movie-list__thumbnail-gradient-overlay" />
               </div>
             </div>
           );

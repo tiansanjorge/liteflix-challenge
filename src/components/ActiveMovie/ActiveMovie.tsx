@@ -9,20 +9,20 @@ const ActiveMovie: React.FC<ActiveMovieProps> = ({ title }) => {
   const isTitleLong = title.length > 24;
 
   return (
-    <div className="active-movie-container">
-      <p className="liteflix-original">
+    <div className="active-movie">
+      <p className="active-movie__liteflix-original">
         ORIGINAL DE <b><b>LITEFLIX</b></b>
       </p>
-      <h1 className={`active-movie-title ${isTitleLong ? 'movie-title-reduced' : ''}`}>
+      <h1 className={`active-movie__title ${isTitleLong ? 'active-movie__title-reduced' : ''}`}>
         {title}
       </h1>
-      <div className="buttons">
-        <button className="main-play-button">
-          <img src="img/play.png" alt="play" className="main-play-icon" />
+      <div className="active-movie__buttons">
+        <button className="active-movie__play-button">
+          <img src="img/play.png" alt="play" className="active-movie__play-icon" />
           REPRODUCIR
         </button>
-        <button className="add-to-list-button">
-          <img src="img/plus.png" alt="plus" className="main-plus-icon" />
+        <button className="active-movie__add-to-list-button">
+          <img src="img/plus.png" alt="plus" className="active-movie__plus-icon" />
           MI LISTA
         </button>
       </div>

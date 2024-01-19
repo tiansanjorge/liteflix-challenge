@@ -22,18 +22,18 @@ const DesktopHeader: React.FC = () => {
   };
 
   return (
-    <header className='header'>
-      <div className="header__section-logo">
-        <div className="header__logo">
-          LITE<span className="header__logo-part2">FLIX</span>
+    <header className='desktop-header'>
+      <div className="desktop-header__section-logo">
+        <div className="desktop-header__logo">
+          LITE<span className="desktop-header__logo-part2">FLIX</span>
         </div>
-        <button className="header__add-movie" onClick={handleAddMovieClick}>
-          <img src="img/plus.png" alt="plus" className="header__header-plus-icon" />
+        <button className="desktop-header__add-movie" onClick={handleAddMovieClick}>
+          <img src="img/plus.png" alt="plus" className="desktop-header__header-plus-icon" />
           Agregar película
         </button>
       </div>
       <AddMovie show={showModal} onClose={handleCloseModal} />
-      <img src="img/menu.png" alt="menu" className="header__menu-icon" onClick={handleMenuIconClick} />
+      <img src="img/menu.png" alt="menu" className="desktop-header__menu-icon" onClick={handleMenuIconClick} />
         <ProfileComponent />
       {showMenu && <Menu onClose={() => setShowMenu(false)} />}
     </header>

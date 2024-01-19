@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import AddMovie from "../AddMovie/AddMovie";
 import "./Menu.scss";
+import MobileMenuHeader from "../MobileMenuHeader/MobileMenuHeader";
+import ProfileComponent from "../ProfileComponent/ProfileComponent";
 
 interface MenuProps {
   onClose: () => void;
@@ -9,6 +11,19 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({ onClose }) => {
   const [showModal, setShowModal] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleCloseClick = () => {
     onClose();
@@ -23,29 +38,25 @@ const Menu: React.FC<MenuProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="background">
-      <div className="menu-dropdown" ref={dropdownRef}>
-        <div className="menu-header">
-          <img
-            className="close-button"
-            onClick={handleCloseClick}
-            src="img/close.png"
-            alt="close-button"
-          />
-          <div className="menu-logo">
-            LITE<span className="menu-logo2">FLIX</span>
-          </div>
-          <div className="section-menu">
+    <div className="menu">
+      <div className="menu__dropdown" ref={dropdownRef}>
+        {windowWidth > 900 ? (
+          <div className="menu__header">
             <img
-              src="img/notificacion.png"
-              alt="notificacion"
-              className="notification-icon"
+              className="menu__close-button"
+              onClick={handleCloseClick}
+              src="img/close.png"
+              alt="close-button"
             />
-            <img src="img/perfil.png" alt="perfil" className="profile-icon" />
+
+            <ProfileComponent />
           </div>
-        </div>
-        <div className="content">
-          <div className="options">
+        ):
+        <MobileMenuHeader onClose={handleCloseClick}/> 
+        }
+
+        <div className="menu__content">
+          <div className="menu__options">
             <p>INICIO</p>
             <p>SERIES</p>
             <p>PELICULAS</p>
@@ -54,14 +65,12 @@ const Menu: React.FC<MenuProps> = ({ onClose }) => {
             <p>MIS PELICULAS</p>
             <p>MI LISTA</p>
           </div>
-          <button className="menu-add-movie" onClick={handleAddMovieClick}>
-            <img src="img/plus.png" alt="plus" className="menu-plus-icon" />
+          <button className="menu__add-movie" onClick={handleAddMovieClick}>
+            <img src="img/plus.png" alt="plus" className="menu__plus-icon" />
             Agregar película
           </button>
-          
-          <div className="log-out">
-            CERRAR SESIÓN
-          </div>
+
+          <div className="menu__log-out">CERRAR SESIÓN</div>
         </div>
       </div>
       <AddMovie show={showModal} onClose={handleCloseModal} />
@@ -70,4 +79,3 @@ const Menu: React.FC<MenuProps> = ({ onClose }) => {
 };
 
 export default Menu;
-
