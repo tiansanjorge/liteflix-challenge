@@ -47,7 +47,7 @@ const AppContainer: React.FC = () => {
       <div className="app-container__content">
         {windowWidth < 900 ? <MobileHeader/> : <DesktopHeader />}
         <div className="app-container__body">
-          <ActiveMovie title={movies[4].title} />
+          <ActiveMovie title={movies[5].title} />
           <MovieList />
         </div>
       </div>
