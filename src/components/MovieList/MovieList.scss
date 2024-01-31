@@ -106,12 +106,10 @@ $primary-color: #ffffff;
     transition: background 0.3s ease-in;
   }
   &__play-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     overflow: hidden;
     color: transparent;
     transition: 0.3s;
+    z-index: 1;
   }
 
   &__play-button {
