@@ -29,8 +29,8 @@ type CurrentModal =
 
 const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
   const [movieData, setMovieData] = useState<MovieData | null>(null);
-  const [fileUploaded, setFileUploaded] = useState(false);
   const [currentModal, setCurrentModal] = useState<CurrentModal>(null);
+  const [openSuccessModal, setOpenSuccessModal] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -65,7 +65,6 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
         setMovieData(fileData);
         setCurrentModal("UploadingMovie");
         console.log(currentModal);
-        setFileUploaded(true);
         setTimeout(() => {
           setCurrentModal("ErrorUploading");
         }, 1500);
@@ -93,12 +92,11 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
   const handleReset = () => {
     localStorage.removeItem("movieData");
     setCurrentModal(null);
-    setFileUploaded(false);
     setMovieData(null);
     onClose();
   };
 
-  const handleRetryUpload = () => {
+  const handleRetry = () => {
     setCurrentModal("UploadFinished");
   };
 
@@ -108,8 +106,7 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
       const updatedMovies = [...storedMovies, movieData];
       localStorage.setItem("myMovies", JSON.stringify(updatedMovies));
     }
-    setCurrentModal("SuccessModal");
-  };
+    setOpenSuccessModal(true);}
 
   const handleGoToHome = () => {
     window.location.reload();
@@ -120,9 +117,7 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
       <Modal show={show} onHide={handleReset} centered className="add-movie">
         {windowWidth < 900 && <MobileMenuHeader onClose={handleReset} />}
         <div className="add-movie__content">
-          <h3 className="add-movie__title">
-            AGREGAR PELÍCULA
-          </h3>
+          <h3 className="add-movie__title">AGREGAR PELÍCULA</h3>
 
           {currentModal === "AddingMovie" && (
             <div
@@ -168,16 +163,60 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
               >
                 40%
               </progress>
-              <p className="add-movie__loading-cancel" onClick={handleReset}>
+              <p className="add-movie__loading-option" onClick={handleReset}>
                 CANCELAR
               </p>
             </div>
           )}
+          {currentModal === "ErrorUploading" && (
+            <div className="add-movie__loading">
+              <p className="add-movie__loading-label">
+                <b>¡ERROR! </b>{" "}
+                {windowWidth < 900
+                  ? "NO SE PUDO CARGAR LA PELÍCULA"
+                  : "NO SE HA PODIDO CARGAR LA PELÍCULA"}
+              </p>
+              <progress
+                className="add-movie__loading-progress-error"
+                id="file"
+                max="100"
+                value="100"
+              >
+                100%
+              </progress>
+              <p className="add-movie__loading-option" onClick={handleRetry}>
+                REINTENTAR
+              </p>
+            </div>
+          )}
+          {currentModal === "UploadFinished" && (
+            <div className="add-movie__loading">
+              <p className="add-movie__loading-label">
+                <b>100% CARGADO</b>
+              </p>
+              <progress
+                className="add-movie__loading-progress"
+                id="file"
+                max="100"
+                value="100"
+              >
+                100%
+              </progress>
+              <p className="add-movie__loading-ready">¡LISTO!</p>
+            </div>
+          )}
           <div className="add-movie__divider">
-            <p className="add-movie__divider-title">TITULO</p>
+            <p className="add-movie__divider-title">
+              {movieData ? movieData.name.slice(0, -4) : "TITULO"}
+            </p>
           </div>
-            <div className="add-movie__footer">
-            <button className="add-movie__upload-button" disabled>
+          <div className="add-movie__footer">
+            <button
+              className="add-movie__upload-button" 
+              onClick={currentModal === "UploadFinished" || currentModal === "AddingMovie" ? handleUploadToMyMovies : () => {}}
+  disabled={currentModal !== "UploadFinished" && currentModal !== "AddingMovie"}
+              
+            >
               SUBIR PELÍCULA
             </button>
             {windowWidth < 900 && (
@@ -185,28 +224,33 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
                 SALIR
               </button>
             )}
-            </div>
+          </div>
         </div>
+        {openSuccessModal && (
+        <Modal
+          centered
+          className="add-movie"
+          onClose={() => {
+            setOpenSuccessModal(false);
+          }}
+        >
+          {windowWidth < 900 && <MobileMenuHeader onClose={handleReset} />}
+          <div className="add-movie__success-content">
+            <h3 className="add-movie__success-title">¡FELICITACIONES</h3>
+            <p>{movieData?.name.slice(0, -4)} FUE CORRECTAMENTE SUBIDA</p>
+
+            {windowWidth < 900 && (
+              <button className="add-movie__success-exit-button" onClick={handleReset}>
+                IR A HOME
+              </button>
+            )}
+          </div>
+        </Modal>
+      )}
       </Modal>
 
+      
       {/* 
-      {currentModal === "ErrorUploading" && (
-        <ErrorUploading
-          fileUploaded={fileUploaded}
-          movieData={movieData}
-          onReset={handleReset}
-          onRetry={handleRetryUpload}
-        />
-      )}
-      {currentModal === "UploadFinished" && (
-        <UploadFinished
-          fileUploaded={fileUploaded}
-          movieData={movieData}
-          onReset={handleReset}
-          onRetry={handleRetryUpload}
-          onUpload={handleUploadToMyMovies}
-        />
-      )}
       {currentModal === "SuccessModal" && (
         <SuccessModal
           fileUploaded={fileUploaded}

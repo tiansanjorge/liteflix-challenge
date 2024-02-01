@@ -147,9 +147,23 @@ div.modal-dialog {
       &::-moz-progress-bar {
         background-color: #64eebc;
       }
+      &-error {
+        width: 100%;
+        border: none;
+        height: 8px;
+        background-color: #ffffff80;
+
+        &::-webkit-progress-value {
+          background-color: #ff0000;
+        }
+
+        &::-moz-progress-bar {
+          background-color: #ff0000;
+        }
+      }
     }
 
-    &-cancel {
+    &-option {
       font-family: "bebas-neue-by-fontfabric", sans-serif;
       font-size: 16px;
       font-weight: 400;
@@ -158,6 +172,18 @@ div.modal-dialog {
       text-align: end;
       margin: 16px 0 0;
       cursor: pointer;
+      display: block;
+    }
+
+    &-ready {
+      color:#64eebc;
+      font-family: "bebas-neue-by-fontfabric", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 4px;
+      text-align: end;
+      margin: 16px 0 0;
       display: block;
     }
   }

@@ -1,13 +1,11 @@
-.active-movie-container {
-  margin: 26.4vh auto 0;
+.active-movie {
   text-align: center;
-  padding: 0 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 8vh;
 }
-
-.liteflix-original {
+.active-movie__liteflix-original {
   margin: 0 0 16px 0;
   font-family: "bebas-neue-by-fontfabric", sans-serif;
   font-size: 20px;
@@ -16,8 +14,7 @@
   letter-spacing: 4px;
   color: #ffffff;
 }
-
-.active-movie-title {
+.active-movie__title {
   font-family: "bebas-neue-by-fontfabric", sans-serif;
   font-size: 60px;
   font-weight: 700;
@@ -28,27 +25,25 @@
   width: -moz-fit-content;
   width: fit-content;
 }
-
-.movie-title-reduced {
+.active-movie__title-reduced {
   font-size: 40px;
   line-height: 50px;
   letter-spacing: 7px;
   width: -moz-fit-content;
   width: fit-content;
 }
-
-.main-play-button {
-  width: 248px;
-  height: 56px;
+.active-movie__play-button {
+  width: 200px;
+  height: 50px;
   margin: 16px auto 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-family: "bebas-neue-by-fontfabric", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 21.6px;
+  line-height: 18px;
   letter-spacing: 4px;
   color: #ffffff;
   background-color: #242424;
@@ -56,34 +51,26 @@
   cursor: pointer;
   transition: background 0.3s ease-in;
 }
-.main-play-button:hover {
+.active-movie__play-button:hover {
   background: #121212;
 }
-
-.main-play-icon {
-  width: 14px;
-  height: 14px;
+.active-movie__play-icon {
+  width: 12px;
+  height: 12px;
   margin-right: 12px;
 }
-
-.main-plus-icon {
-  width: 14px;
-  height: 14px;
-  margin-right: 12px;
-}
-
-.add-to-list-button {
-  width: 248px;
-  height: 56px;
+.active-movie__add-to-list-button {
+  width: 200px;
+  height: 50px;
   margin: 16px auto 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-family: "bebas-neue-by-fontfabric", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 21.6px;
+  line-height: 18px;
   letter-spacing: 4px;
   color: #ffffff;
   background-color: rgba(36, 36, 36, 0.5019607843);
@@ -91,79 +78,97 @@
   cursor: pointer;
   transition: background 0.3s ease-in;
 }
-.add-to-list-button:hover {
+.active-movie__add-to-list-button:hover {
   background: #242424;
+}
+.active-movie__plus-icon {
+  width: 12px;
+  height: 12px;
+  margin-right: 12px;
 }
 
 @media screen and (min-width: 375px) {
-  .active-movie-title {
+  .active-movie__title {
     font-size: 76px;
     line-height: 77.5px;
     letter-spacing: 12px;
   }
-  .movie-title-reduced {
+  .active-movie__title-reduced {
     font-size: 48px;
     line-height: 50px;
     letter-spacing: 8px;
   }
 }
-@media screen and (min-width: 480px) {
-  .activeMovieContainer {
-    margin: 26.4vh 10vw 0;
-  }
-}
 @media screen and (min-width: 650px) {
-  .active-movie-title {
+  .active-movie__title {
     font-size: 83px;
     line-height: 75px;
     letter-spacing: 12px;
   }
-  .movie-title-reduced {
+  .active-movie__title-reduced {
     font-size: 55px;
     line-height: 59px;
     letter-spacing: 9px;
   }
 }
 @media screen and (min-width: 900px) {
-  .active-movie-container {
-    margin: 50vh 0 5.6vh 6.9vw;
+  .active-movie {
     align-items: start;
+    text-align: start;
+    margin-bottom: 12vh;
   }
-  .liteflix-original {
+  .active-movie__liteflix-original {
     margin: 0 0 24px 5px;
   }
-  .active-movie-title {
+  .active-movie__title {
     font-size: 90px;
     line-height: 75px;
     letter-spacing: 13px;
   }
-  .liteflix-original {
-    align-self: start;
-  }
-  .movie-title-reduced {
+  .active-movie__title-reduced {
     font-size: 64px;
     line-height: 65px;
     letter-spacing: 10px;
   }
-  .buttons {
+  .active-movie__buttons {
     display: flex;
     flex-direction: row;
     margin: 32px 0 0 5px;
   }
-  .main-play-button {
+  .active-movie__play-button {
+    width: 248px;
+    height: 56px;
+    font-size: 18px;
+    line-height: 22px;
     margin: 0 24px 0 0;
   }
-  .add-to-list-button {
+  .active-movie__add-to-list-button {
+    width: 248px;
+    height: 56px;
+    font-size: 18px;
+    line-height: 22px;
     margin: 0;
+  }
+  .active-movie__play-icon {
+    width: 14px;
+    height: 14px;
+  }
+  .active-movie__plus-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 12px;
   }
 }
 @media screen and (min-width: 1366px) {
-  .active-movie-title {
+  .active-movie {
+    margin-bottom: 6%;
+  }
+  .active-movie__title {
     font-size: 120px;
     line-height: 100px;
     letter-spacing: 16px;
   }
-  .movie-title-reduced {
+  .active-movie__title-reduced {
     font-size: 75px;
     line-height: 75px;
     letter-spacing: 12px;

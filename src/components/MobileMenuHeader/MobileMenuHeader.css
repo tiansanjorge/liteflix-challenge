@@ -1,25 +1,19 @@
-.mobile-header {
+.mobile-menu-header {
   padding-top: 16px;
   padding-left: 7%;
   padding-right: 7%;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.mobile-header__menu-icon {
-  width: 27px;
-  height: 12px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-.mobile-header__close-button {
+.mobile-menu-header__close-button {
   width: 15px;
   height: 15px;
   cursor: pointer;
   margin-right: 22px;
 }
-.mobile-header__logo {
+.mobile-menu-header__logo {
   font-family: "bebas-neue-by-fontfabric", sans-serif;
   font-size: 28px;
   font-weight: 700;
@@ -28,15 +22,15 @@
   text-align: center;
   color: #64eebc;
 }
-.mobile-header__logo-part2 {
+.mobile-menu-header__logo-part2 {
   font-weight: 300;
 }
-.mobile-header__logo {
+.mobile-menu-header__logo {
   font-size: 34px;
   line-height: 34px;
   text-align: left;
 }
-.mobile-header__profile-icon {
+.mobile-menu-header__profile-icon {
   width: 36px;
   height: 36px;
-}/*# sourceMappingURL=MobileHeader.css.map */
+}/*# sourceMappingURL=MobileMenuHeader.css.map */
