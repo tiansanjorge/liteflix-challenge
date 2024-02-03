@@ -214,7 +214,7 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
             <button
               className="add-movie__upload-button" 
               onClick={currentModal === "UploadFinished" || currentModal === "AddingMovie" ? handleUploadToMyMovies : () => {}}
-  disabled={currentModal !== "UploadFinished" && currentModal !== "AddingMovie"}
+              disabled={currentModal !== "UploadFinished" && currentModal !== "AddingMovie"}
               
             >
               SUBIR PELÍCULA
@@ -230,7 +230,7 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
         <Modal
           centered
           className="add-movie"
-          onClose={() => {
+          onHide={() => {
             setOpenSuccessModal(false);
           }}
         >
