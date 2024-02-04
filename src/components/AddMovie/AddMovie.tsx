@@ -48,7 +48,6 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
   useEffect(() => {
     if (show === true) {
       setCurrentModal("AddingMovie");
-      console.log(show);
     }
   }, [show]);
 
@@ -64,7 +63,6 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
         localStorage.setItem("movieData", JSON.stringify(fileData));
         setMovieData(fileData);
         setCurrentModal("UploadingMovie");
-        console.log(currentModal);
         setTimeout(() => {
           setCurrentModal("ErrorUploading");
         }, 1500);
@@ -106,7 +104,9 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
       const updatedMovies = [...storedMovies, movieData];
       localStorage.setItem("myMovies", JSON.stringify(updatedMovies));
     }
-    setOpenSuccessModal(true);}
+    console.log("Si!");
+    setOpenSuccessModal(true);
+  };
 
   const handleGoToHome = () => {
     window.location.reload();
@@ -212,10 +212,13 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
           </div>
           <div className="add-movie__footer">
             <button
-              className="add-movie__upload-button" 
-              onClick={currentModal === "UploadFinished" || currentModal === "AddingMovie" ? handleUploadToMyMovies : () => {}}
-              disabled={currentModal !== "UploadFinished" && currentModal !== "AddingMovie"}
-              
+              className="add-movie__upload-button"
+              onClick={
+                currentModal === "UploadFinished"
+                  ? handleUploadToMyMovies
+                  : () => {}
+              }
+              disabled={currentModal !== "UploadFinished"}
             >
               SUBIR PELÍCULA
             </button>
@@ -226,39 +229,29 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
             )}
           </div>
         </div>
-        {openSuccessModal && (
-        <Modal
-          centered
-          className="add-movie"
-          onHide={() => {
-            setOpenSuccessModal(false);
-          }}
-        >
-          {windowWidth < 900 && <MobileMenuHeader onClose={handleReset} />}
-          <div className="add-movie__success-content">
-            <h3 className="add-movie__success-title">¡FELICITACIONES</h3>
-            <p>{movieData?.name.slice(0, -4)} FUE CORRECTAMENTE SUBIDA</p>
-
-            {windowWidth < 900 && (
-              <button className="add-movie__success-exit-button" onClick={handleReset}>
-                IR A HOME
-              </button>
-            )}
-          </div>
-        </Modal>
-      )}
       </Modal>
 
-      
-      {/* 
-      {currentModal === "SuccessModal" && (
-        <SuccessModal
-          fileUploaded={fileUploaded}
-          movieData={movieData}
-          onReset={handleReset}
-          onGoToHome={handleGoToHome}
-        />
-      )} */}
+      <Modal
+        show={openSuccessModal}
+        centered
+        className="add-movie"
+        onHide={handleGoToHome}
+      >
+        {windowWidth < 900 && <MobileMenuHeader onClose={handleGoToHome} />}
+        <div className="add-movie__success-content">
+          <h3>¡FELICITACIONES!</h3>
+          <p>{movieData?.name.slice(0, -4)} FUE CORRECTAMENTE SUBIDA.</p>
+
+          {windowWidth < 900 && (
+            <button
+              className="add-movie__upload-button"
+              onClick={handleGoToHome}
+            >
+              IR A HOME
+            </button>
+          )}
+        </div>
+      </Modal>
     </>
   );
 };

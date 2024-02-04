@@ -37,7 +37,7 @@ div.modal-dialog div.modal-content {
   height: 10vh;
   border: 1px dashed #ffffff;
   padding: 0 10px;
-  margin-top: 72px;
+  margin: 72px 0px 56px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -60,7 +60,6 @@ div.modal-dialog div.modal-content {
 }
 .add-movie__divider {
   width: 248px;
-  margin-top: 6.9vh;
   border-bottom: 1px solid #ffffff;
   box-sizing: border-box;
   overflow: hidden;
@@ -170,58 +169,27 @@ div.modal-dialog div.modal-content {
   display: flex;
   flex-direction: column;
 }
-
-.uploading-divider {
-  width: 248px;
-  border-bottom: 1px solid #ffffff;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.uploading-divider p {
+.add-movie__success-content {
   font-family: "bebas-neue-by-fontfabric", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 4px;
   text-align: center;
-  margin-bottom: 8px;
+  padding: 192px 24px 133px;
 }
-
-.progress-error {
-  width: 100%;
-  border: none;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.5019607843);
-}
-.progress-error::-webkit-progress-value {
-  background-color: #ff0000;
-}
-.progress-error::-moz-progress-bar {
-  background-color: #ff0000;
-}
-
-.upload-finished-message {
-  font-family: "bebas-neue-by-fontfabric", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 4px;
-  text-align: end;
-  margin: 16px 0 0;
-  color: #64eebc;
-}
-
-.congratulations {
-  font-family: "bebas-neue-by-fontfabric", sans-serif;
+.add-movie__success-content h3 {
+  margin: 0;
   font-size: 24px;
-  font-weight: 700;
   line-height: 26px;
   letter-spacing: 4px;
-  text-align: center;
-  margin: 11.8vh 0 3.9vh;
+  font-weight: 700;
 }
-
-.success-message {
+.add-movie__success-content p {
+  padding-top: 32px;
+  margin: 0;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 4px;
+  font-weight: 300;
+}
+.add-movie .success-message {
   font-family: "bebas-neue-by-fontfabric", sans-serif;
   font-size: 20px;
   font-weight: 400;
@@ -229,20 +197,6 @@ div.modal-dialog div.modal-content {
   letter-spacing: 4px;
   text-align: center;
   margin: 0;
-}
-
-#home-button {
-  width: 248px;
-  height: 56px;
-  padding: 0;
-  border: 0;
-  border-radius: none;
-  font-family: "bebas-neue-by-fontfabric", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 4px;
-  margin-top: 16.4vh;
 }
 
 @media screen and (min-width: 480px) {

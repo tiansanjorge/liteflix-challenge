@@ -43,7 +43,7 @@ div.modal-dialog {
     height: 10vh;
     border: 1px dashed #ffffff;
     padding: 0 10px;
-    margin-top: 72px;
+    margin: 72px 0px 56px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -69,7 +69,6 @@ div.modal-dialog {
 
   &__divider {
     width: 248px;
-    margin-top: 6.9vh;
     border-bottom: 1px solid #ffffff;
     box-sizing: border-box;
     overflow: hidden;
@@ -176,7 +175,7 @@ div.modal-dialog {
     }
 
     &-ready {
-      color:#64eebc;
+      color: #64eebc;
       font-family: "bebas-neue-by-fontfabric", sans-serif;
       font-size: 16px;
       font-weight: 400;
@@ -192,91 +191,39 @@ div.modal-dialog {
     display: flex;
     flex-direction: column;
   }
-}
 
-// UploadingMovie
+  // SuccesModal
 
-.uploading-divider {
-  width: 248px;
-  border-bottom: 1px solid #ffffff;
-  box-sizing: border-box;
-  overflow: hidden;
-
-  p {
+  &__success-content {
     font-family: "bebas-neue-by-fontfabric", sans-serif;
-    font-size: 16px;
+    text-align: center;
+    padding: 192px 24px 133px;
+    h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 26px;
+      letter-spacing: 4px;
+      font-weight: 700;
+    }
+    p {
+      padding-top: 32px;
+      margin: 0;
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 4px;
+      font-weight: 300;
+    }
+  }
+
+  .success-message {
+    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-size: 20px;
     font-weight: 400;
-    line-height: 16px;
+    line-height: 32px;
     letter-spacing: 4px;
     text-align: center;
-    margin-bottom: 8px;
+    margin: 0;
   }
-}
-
-// ErrorUploading
-
-.progress-error {
-  width: 100%;
-  border: none;
-  height: 10px;
-  background-color: #ffffff80;
-
-  &::-webkit-progress-value {
-    background-color: #ff0000;
-  }
-
-  &::-moz-progress-bar {
-    background-color: #ff0000;
-  }
-}
-
-// UploadFinished
-
-.upload-finished-message {
-  font-family: "bebas-neue-by-fontfabric", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 4px;
-  text-align: end;
-  margin: 16px 0 0;
-  color: #64eebc;
-}
-
-// SuccesModal
-
-.congratulations {
-  font-family: "bebas-neue-by-fontfabric", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 26px;
-  letter-spacing: 4px;
-  text-align: center;
-  margin: 11.8vh 0 3.9vh;
-}
-
-.success-message {
-  font-family: "bebas-neue-by-fontfabric", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 32px;
-  letter-spacing: 4px;
-  text-align: center;
-  margin: 0;
-}
-
-#home-button {
-  width: 248px;
-  height: 56px;
-  padding: 0;
-  border: 0;
-  border-radius: none;
-  font-family: "bebas-neue-by-fontfabric", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 4px;
-  margin-top: 16.4vh;
 }
 
 @media screen and (min-width: 480px) {

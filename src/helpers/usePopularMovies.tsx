@@ -34,7 +34,6 @@ const usePopularMovies = () => {
     fetchPopularMovies();
   }, [apiKey]);
 
-  console.log(movies)
   return movies;
 };
 

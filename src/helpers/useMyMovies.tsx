@@ -18,9 +18,7 @@ const useMyMovies = () => {
 
     getMoviesFromLocalStorage();
   }, []);
-
-
-  console.log(movies)
+  
   return movies;
 };
 
