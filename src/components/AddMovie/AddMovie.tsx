@@ -1,11 +1,6 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
 import MobileMenuHeader from "../MobileMenuHeader/MobileMenuHeader";
-import AddingMovie from "../Modals/AddingMovie/AddingMovie";
-import UploadingMovie from "../Modals/UploadingMovie/UploadingMovie";
-import ErrorUploading from "../Modals/ErrorUploading/ErrorUploading";
-import UploadFinished from "../Modals/UploadFinished/UploadFinished";
-import SuccessModal from "../Modals/SuccessModal/SuccessModal";
 
 import "./AddMovie.scss";
 
@@ -24,7 +19,6 @@ type CurrentModal =
   | "UploadingMovie"
   | "ErrorUploading"
   | "UploadFinished"
-  | "SuccessModal"
   | null;
 
 const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
@@ -115,7 +109,16 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
   return (
     <>
       <Modal show={show} onHide={handleReset} centered className="add-movie">
-        {windowWidth < 900 && <MobileMenuHeader onClose={handleReset} />}
+        {windowWidth < 900 ? (
+          <MobileMenuHeader onClose={handleReset} />
+        ) : (
+          <img
+            src="img/close.png"
+            alt="close"
+            className="add-movie__close-button"
+            onClick={handleReset}
+          />
+        )}
         <div className="add-movie__content">
           <h3 className="add-movie__title">AGREGAR PELÍCULA</h3>
 

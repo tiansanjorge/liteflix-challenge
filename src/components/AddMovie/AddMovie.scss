@@ -95,7 +95,7 @@ div.modal-dialog {
     font-weight: 400;
     line-height: 22px;
     letter-spacing: 4px;
-    margin: 11.8vh 0 3vh;
+    margin: 96px 0 24px;
     color: #242424;
   }
 
@@ -119,7 +119,7 @@ div.modal-dialog {
     width: 87.2vw;
     display: flex;
     flex-direction: column;
-    margin: 72px 0 11px;
+    margin: 72px 0 67px;
 
     &-label {
       font-family: "bebas-neue-by-fontfabric", sans-serif;
@@ -214,106 +214,75 @@ div.modal-dialog {
       font-weight: 300;
     }
   }
-
-  .success-message {
-    font-family: "bebas-neue-by-fontfabric", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: 4px;
-    text-align: center;
-    margin: 0;
-  }
 }
 
 @media screen and (min-width: 480px) {
-  div.modal-content {
-    .container {
+  .add-movie {
+    &__container {
       width: 60vw;
     }
-  }
-  .loading-container {
-    width: 60vw;
+    &__loading {
+      width: 60vw;
+    }
   }
 }
 
 @media screen and (min-width: 900px) {
-  div.modal-content {
+  div.modal-dialog {
     width: 730px;
-    min-height: auto;
-    padding: 24px;
+    align-self: center;
+    margin: auto;
+    
 
-    div.add-movie__title {
+    div.modal-content {
+      width: 100%;
+      min-height: auto;
+      padding: 24px;
+    }
+  }
+
+  .add-movie {
+    &__close-button {
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      align-self: end;
+    }
+
+    &__title {
       font-size: 20px;
       line-height: 20px;
       margin: 9px 0 48px;
     }
 
-    .close-button {
-      width: 15px;
-      height: 15px;
-      cursor: pointer;
-      align-self: flex-end;
-      margin: 0;
-    }
-
-    .container {
+    &__container {
       width: 602px;
       height: 100px;
+      margin: 0 0 48px 0;
     }
 
-    .divider {
-      margin-top: 48px;
+    &__divider {
+      margin:0;
     }
 
-    .upload-button {
+    &__upload-button {
       margin: 48px 0 24px;
     }
-  }
 
-  // UploadingMovie
+    &__loading {
+      width: 602px;
+      font-size: 16px;
+      line-height: 16px;
+      margin: 12px 0 59px 0;
 
-  .loading-container {
-    width: 602px;
-    font-size: 16px;
-    line-height: 16px;
-    margin-bottom: 59px;
-
-    .cancel {
-      font-size: 18px;
-      line-height: 18px;
+      &-option {
+        font-size: 18px;
+        line-height: 18px;
+      }
+      &-ready {
+        font-size: 18px;
+        line-height: 18px;
+      }
     }
-  }
-
-  // UploadFinished
-
-  .upload-finished-message {
-    font-size: 18px;
-    line-height: 18px;
-  }
-
-  // SuccesModal
-
-  #success-title {
-    margin: 25px 0 0;
-    font-family: "bebas-neue-by-fontfabric", sans-serif;
-    font-size: 34px;
-    font-weight: 700;
-    line-height: 34px;
-    letter-spacing: 4px;
-  }
-
-  .congratulations {
-    margin: 72px 0 24px;
-  }
-
-  .success-message {
-    line-height: 24px;
-  }
-
-  #home-button {
-    padding: 0;
-    border: 0;
-    margin: 92px 0 24px;
   }
 }

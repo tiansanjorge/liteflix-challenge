@@ -7,6 +7,7 @@ interface MobileMenuHeaderProps {
 const MobileMenuHeader: React.FC<MobileMenuHeaderProps> = ({ onClose }) => {
   return (
     <header className="mobile-menu-header">
+      
       <img
         className="mobile-menu-header__close-button"
         onClick={onClose}

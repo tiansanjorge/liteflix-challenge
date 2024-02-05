@@ -12,7 +12,7 @@ const MobileHeader: React.FC = () => {
 
   return (
     <header className="mobile-header">
-
+      
       <img
         src="img/menu-mobile.png"
         alt="menu"
