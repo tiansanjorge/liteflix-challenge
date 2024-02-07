@@ -1,3 +1,6 @@
+$font-family: "bebas-neue-by-fontfabric", sans-serif;
+$primary-color: #64eebc;
+
 .mobile-menu-header {
   padding-top: 16px;
   padding-left: 7%;
@@ -15,19 +18,18 @@
   }
 
   &__logo {
-    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-family: $font-family;
     font-size: 28px;
     font-weight: 700;
     line-height: 28px;
     letter-spacing: 4px;
     text-align: center;
-    color: #64eebc;
+    color: $primary-color;
 
     &-part2 {
       font-weight: 300;
     }
   }
-
 
   &__logo {
     font-size: 34px;

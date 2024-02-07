@@ -9,10 +9,10 @@ const ActiveMovie: React.FC<ActiveMovieProps> = ({ title }) => {
   const isTitleLong = title.length > 24;
 
   return (
-    <div className="active-movie">
-      <p className="active-movie__liteflix-original">
+    <section className="active-movie">
+      <h3 className="active-movie__liteflix-original">
         ORIGINAL DE <b><b>LITEFLIX</b></b>
-      </p>
+      </h3>
       <h1 className={`active-movie__title ${isTitleLong ? 'active-movie__title-reduced' : ''}`}>
         {title}
       </h1>
@@ -26,7 +26,7 @@ const ActiveMovie: React.FC<ActiveMovieProps> = ({ title }) => {
           MI LISTA
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

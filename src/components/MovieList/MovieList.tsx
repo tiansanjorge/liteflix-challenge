@@ -54,7 +54,7 @@ const MovieList: React.FC = () => {
     : popularMovies.slice(0, 4);
 
   return (
-    <div className="movie-list">
+    <section className="movie-list">
       <button className="movie-list__popular-link" onClick={toggleDropdown}>
         VER:{" "}
         <b>
@@ -124,7 +124,7 @@ const MovieList: React.FC = () => {
             : "movie-list__movie-thumbnail";
 
           return (
-            <div key={index} className={thumbnailClass}>
+            <article key={index} className={thumbnailClass}>
               <img
                 src={
                   showPopularMovies
@@ -157,11 +157,11 @@ const MovieList: React.FC = () => {
 
                 <div className="movie-list__thumbnail-gradient-overlay" />
               </div>
-            </div>
+            </article>
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -24,9 +24,9 @@ const DesktopHeader: React.FC = () => {
   return (
     <header className='desktop-header'>
       <div className="desktop-header__section-logo">
-        <div className="desktop-header__logo">
+        <h2 className="desktop-header__logo">
           LITE<span className="desktop-header__logo-part2">FLIX</span>
-        </div>
+        </h2>
         <button className="desktop-header__add-movie" onClick={handleAddMovieClick}>
           <img src="img/plus.png" alt="plus" className="desktop-header__header-plus-icon" />
           Agregar película

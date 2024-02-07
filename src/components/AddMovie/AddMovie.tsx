@@ -240,19 +240,29 @@ const AddMovie: React.FC<AddMovieProps> = ({ show, onClose }) => {
         className="add-movie"
         onHide={handleGoToHome}
       >
-        {windowWidth < 900 && <MobileMenuHeader onClose={handleGoToHome} />}
+        {windowWidth < 900 ? (
+          <MobileMenuHeader onClose={handleGoToHome} />
+        ) : (
+          <img
+            src="img/close.png"
+            alt="close"
+            className="add-movie__close-button"
+            onClick={handleGoToHome}
+          />
+        )}
+        {windowWidth > 900 && (
+          <p className="add-movie__success-title">
+          LITE<span>FLIX</span>
+        </p>
+        )}
+
         <div className="add-movie__success-content">
           <h3>¡FELICITACIONES!</h3>
           <p>{movieData?.name.slice(0, -4)} FUE CORRECTAMENTE SUBIDA.</p>
 
-          {windowWidth < 900 && (
-            <button
-              className="add-movie__upload-button"
-              onClick={handleGoToHome}
-            >
-              IR A HOME
-            </button>
-          )}
+          <button className="add-movie__success-content-home" onClick={handleGoToHome}>
+            IR A HOME
+          </button>
         </div>
       </Modal>
     </>

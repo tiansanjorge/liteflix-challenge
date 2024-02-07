@@ -1,3 +1,9 @@
+$font-family: "bebas-neue-by-fontfabric", sans-serif;
+$color-white: #ffffff;
+$color-aqua: #64eebc;
+$color-gray: #242424;
+$color-gray-light: #ffffff80;
+
 // styling bootstrap native classes
 
 div.modal-dialog {
@@ -11,8 +17,8 @@ div.modal-dialog {
   div.modal-content {
     width: 100vw;
     min-height: 100vh;
-    background: #242424;
-    color: #ffffff;
+    background: $color-gray;
+    color: $color-white;
     border: none;
     border-radius: 0;
     box-sizing: border-box;
@@ -29,19 +35,19 @@ div.modal-dialog {
   }
 
   &__title {
-    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-family: $font-family;
     font-size: 22px;
     font-weight: 400;
     line-height: 22px;
     letter-spacing: 4px;
-    color: #64eebc;
+    color: $color-aqua;
     margin: 96px 0 0;
   }
 
   &__container {
     width: 87.2vw;
     height: 10vh;
-    border: 1px dashed #ffffff;
+    border: 1px dashed $color-white;
     padding: 0 10px;
     margin: 72px 0px 56px;
     box-sizing: border-box;
@@ -53,7 +59,7 @@ div.modal-dialog {
       display: flex;
       align-items: center;
       cursor: pointer;
-      font-family: "bebas-neue-by-fontfabric", sans-serif;
+      font-family: $font-family;
       font-size: 16px;
       font-weight: 400;
       line-height: 28px;
@@ -69,12 +75,12 @@ div.modal-dialog {
 
   &__divider {
     width: 248px;
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid $color-white;
     box-sizing: border-box;
     overflow: hidden;
 
     &-title {
-      font-family: "bebas-neue-by-fontfabric", sans-serif;
+      font-family: $font-family;
       font-size: 16px;
       font-weight: 400;
       line-height: 16px;
@@ -90,27 +96,27 @@ div.modal-dialog {
     padding: 0;
     border: 0;
     border-radius: none;
-    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-family: $font-family;
     font-size: 18px;
     font-weight: 400;
     line-height: 22px;
     letter-spacing: 4px;
     margin: 96px 0 24px;
-    color: #242424;
+    color: $color-gray;
   }
 
   &__exit-button {
     width: 248px;
     height: 56px;
     padding: 0;
-    border: solid 1px #ffffff80;
+    border: solid 1px $color-gray-light;
     border-radius: none;
-    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-family: $font-family;
     font-size: 18px;
     font-weight: 400;
     line-height: 22px;
     letter-spacing: 4px;
-    color: #ffffff;
+    color: $color-white;
     background-color: transparent;
     margin: 0;
   }
@@ -122,7 +128,7 @@ div.modal-dialog {
     margin: 72px 0 67px;
 
     &-label {
-      font-family: "bebas-neue-by-fontfabric", sans-serif;
+      font-family: $font-family;
       font-size: 14px;
       font-weight: 400;
       line-height: 14px;
@@ -133,24 +139,24 @@ div.modal-dialog {
       width: 100%;
       border: none;
       height: 8px;
-      background-color: #ffffff80;
+      background-color: $color-gray-light;
 
       &::-webkit-progress-bar {
-        background-color: #ffffff80;
+        background-color: $color-gray-light;
       }
 
       &::-webkit-progress-value {
-        background-color: #64eebc;
+        background-color: $color-aqua;
       }
 
       &::-moz-progress-bar {
-        background-color: #64eebc;
+        background-color: $color-aqua;
       }
       &-error {
         width: 100%;
         border: none;
         height: 8px;
-        background-color: #ffffff80;
+        background-color: $color-gray-light;
 
         &::-webkit-progress-value {
           background-color: #ff0000;
@@ -163,7 +169,7 @@ div.modal-dialog {
     }
 
     &-option {
-      font-family: "bebas-neue-by-fontfabric", sans-serif;
+      font-family: $font-family;
       font-size: 16px;
       font-weight: 400;
       line-height: 16px;
@@ -175,8 +181,8 @@ div.modal-dialog {
     }
 
     &-ready {
-      color: #64eebc;
-      font-family: "bebas-neue-by-fontfabric", sans-serif;
+      color: $color-aqua;
+      font-family: $font-family;
       font-size: 16px;
       font-weight: 400;
       line-height: 16px;
@@ -195,7 +201,7 @@ div.modal-dialog {
   // SuccesModal
 
   &__success-content {
-    font-family: "bebas-neue-by-fontfabric", sans-serif;
+    font-family: $font-family;
     text-align: center;
     padding: 192px 24px 133px;
     h3 {
@@ -212,6 +218,20 @@ div.modal-dialog {
       line-height: 32px;
       letter-spacing: 4px;
       font-weight: 300;
+    }
+    &-home {
+      width: 248px;
+      height: 56px;
+      padding: 0;
+      border: 0;
+      border-radius: none;
+      font-family: $font-family;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 4px;
+      margin: 96px 0 24px;
+      color: $color-gray;
     }
   }
 }
@@ -232,7 +252,6 @@ div.modal-dialog {
     width: 730px;
     align-self: center;
     margin: auto;
-    
 
     div.modal-content {
       width: 100%;
@@ -262,7 +281,7 @@ div.modal-dialog {
     }
 
     &__divider {
-      margin:0;
+      margin: 0;
     }
 
     &__upload-button {
@@ -282,6 +301,29 @@ div.modal-dialog {
       &-ready {
         font-size: 18px;
         line-height: 18px;
+      }
+    }
+    &__success-title {
+      font-family: $font-family;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 34px;
+      letter-spacing: 4px;
+      text-align: center;
+      color: $color-aqua;
+      margin: 0;
+      padding-top: 25px;
+      span {
+        font-weight: 300;
+      }
+    }
+    &__success-content {
+      padding: 72px 0 0;
+      p {
+        padding-top: 24px;
+      }
+      &-home {
+        margin-top: 92px;
       }
     }
   }

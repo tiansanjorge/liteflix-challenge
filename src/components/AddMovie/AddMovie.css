@@ -84,7 +84,7 @@ div.modal-dialog div.modal-content {
   font-weight: 400;
   line-height: 22px;
   letter-spacing: 4px;
-  margin: 11.8vh 0 3vh;
+  margin: 96px 0 24px;
   color: #242424;
 }
 .add-movie__exit-button {
@@ -106,7 +106,7 @@ div.modal-dialog div.modal-content {
   width: 87.2vw;
   display: flex;
   flex-direction: column;
-  margin: 72px 0 11px;
+  margin: 72px 0 67px;
 }
 .add-movie__loading-label {
   font-family: "bebas-neue-by-fontfabric", sans-serif;
@@ -189,83 +189,97 @@ div.modal-dialog div.modal-content {
   letter-spacing: 4px;
   font-weight: 300;
 }
-.add-movie .success-message {
+.add-movie__success-content-home {
+  width: 248px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: none;
   font-family: "bebas-neue-by-fontfabric", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 32px;
+  line-height: 22px;
   letter-spacing: 4px;
-  text-align: center;
-  margin: 0;
+  margin: 96px 0 24px;
+  color: #242424;
 }
 
 @media screen and (min-width: 480px) {
-  div.modal-content .container {
+  .add-movie__container {
     width: 60vw;
   }
-  .loading-container {
+  .add-movie__loading {
     width: 60vw;
   }
 }
 @media screen and (min-width: 900px) {
-  div.modal-content {
+  div.modal-dialog {
     width: 730px;
+    align-self: center;
+    margin: auto;
+  }
+  div.modal-dialog div.modal-content {
+    width: 100%;
     min-height: auto;
     padding: 24px;
   }
-  div.modal-content div.add-movie__title {
+  .add-movie__close-button {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    align-self: end;
+  }
+  .add-movie__title {
     font-size: 20px;
     line-height: 20px;
     margin: 9px 0 48px;
   }
-  div.modal-content .close-button {
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-    align-self: flex-end;
-    margin: 0;
-  }
-  div.modal-content .container {
+  .add-movie__container {
     width: 602px;
     height: 100px;
+    margin: 0 0 48px 0;
   }
-  div.modal-content .divider {
-    margin-top: 48px;
+  .add-movie__divider {
+    margin: 0;
   }
-  div.modal-content .upload-button {
+  .add-movie__upload-button {
     margin: 48px 0 24px;
   }
-  .loading-container {
+  .add-movie__loading {
     width: 602px;
     font-size: 16px;
     line-height: 16px;
-    margin-bottom: 59px;
+    margin: 12px 0 59px 0;
   }
-  .loading-container .cancel {
+  .add-movie__loading-option {
     font-size: 18px;
     line-height: 18px;
   }
-  .upload-finished-message {
+  .add-movie__loading-ready {
     font-size: 18px;
     line-height: 18px;
   }
-  #success-title {
-    margin: 25px 0 0;
+  .add-movie__success-title {
     font-family: "bebas-neue-by-fontfabric", sans-serif;
     font-size: 34px;
     font-weight: 700;
     line-height: 34px;
     letter-spacing: 4px;
+    text-align: center;
+    color: #64eebc;
+    margin: 0;
+    padding-top: 25px;
   }
-  .congratulations {
-    margin: 72px 0 24px;
+  .add-movie__success-title span {
+    font-weight: 300;
   }
-  .success-message {
-    line-height: 24px;
+  .add-movie__success-content {
+    padding: 72px 0 0;
   }
-  #home-button {
-    padding: 0;
-    border: 0;
-    margin: 92px 0 24px;
+  .add-movie__success-content p {
+    padding-top: 24px;
+  }
+  .add-movie__success-content-home {
+    margin-top: 92px;
   }
 }/*# sourceMappingURL=AddMovie.css.map */
