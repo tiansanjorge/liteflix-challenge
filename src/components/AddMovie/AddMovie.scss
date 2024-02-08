@@ -125,8 +125,7 @@ div.modal-dialog {
     width: 87.2vw;
     display: flex;
     flex-direction: column;
-    margin: 72px 0 67px;
-
+    margin: 72px 0 74px;
     &-label {
       font-family: $font-family;
       font-size: 14px;
@@ -249,7 +248,7 @@ div.modal-dialog {
 
 @media screen and (min-width: 900px) {
   div.modal-dialog {
-    width: 730px;
+    width: fit-content;
     align-self: center;
     margin: auto;
 
@@ -277,7 +276,7 @@ div.modal-dialog {
     &__container {
       width: 602px;
       height: 100px;
-      margin: 0 0 48px 0;
+      margin: 0 35px 48px;
     }
 
     &__divider {
@@ -292,7 +291,7 @@ div.modal-dialog {
       width: 602px;
       font-size: 16px;
       line-height: 16px;
-      margin: 12px 0 59px 0;
+      margin: 12px 35px 64px;
 
       &-option {
         font-size: 18px;
@@ -318,7 +317,7 @@ div.modal-dialog {
       }
     }
     &__success-content {
-      padding: 72px 0 0;
+      padding: 72px 190px 0;
       p {
         padding-top: 24px;
       }
